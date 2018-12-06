@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。 准备安装 Git &amp;amp; Node.js在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。 12# 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew/usr/bin/ruby -e &quot;">
+  <meta name="description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 建站流程">
 <meta property="og:url" content="https://icedrip.github.io/2018/12/05/Hexo 建站流程/index.html">
-<meta property="og:site_name" content="Hexo-Test">
-<meta property="og:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。 准备安装 Git &amp;amp; Node.js在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。 12# 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew/usr/bin/ruby -e &quot;">
+<meta property="og:site_name" content="Zhaoyu&#39;s Blog">
+<meta property="og:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-06T07:03:32.145Z">
+<meta property="og:updated_time" content="2018-12-06T07:21:36.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 建站流程">
-<meta name="twitter:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。 准备安装 Git &amp;amp; Node.js在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。 12# 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew/usr/bin/ruby -e &quot;">
+<meta name="twitter:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。">
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>Hexo 建站流程 | Hexo-Test</title>
+  <title>Hexo 建站流程 | Zhaoyu's Blog</title>
   
 
 
@@ -195,13 +195,13 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo-Test</span>
+        <span class="site-title">Zhaoyu's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
     
       
-        <p class="site-subtitle">中文测试</p>
+        <p class="site-subtitle">彼岸织锦，此段弄笛</p>
       
     
   </div>
@@ -308,12 +308,12 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhaoyu Zhong">
-      <meta itemprop="description" content="中文测试">
+      <meta itemprop="description" content="Going Go">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo-Test">
+      <meta itemprop="name" content="Zhaoyu's Blog">
     </span>
 
     
@@ -363,7 +363,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-06 15:03:32" itemprop="dateModified" datetime="2018-12-06T15:03:32+08:00">2018-12-06</time>
+                <time title="Modified: 2018-12-06 15:21:36" itemprop="dateModified" datetime="2018-12-06T15:21:36+08:00">2018-12-06</time>
               
             
           </span>
@@ -397,6 +397,7 @@
 
       
         <p>这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。</p>
+<a id="more"></a>
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="安装-Git-amp-Node-js"><a href="#安装-Git-amp-Node-js" class="headerlink" title="安装 Git &amp; Node.js"></a>安装 Git &amp; Node.js</h2><p>在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew</span></span><br><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Git 安装</span></span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
@@ -519,7 +520,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Zhaoyu Zhong</p>
-              <p class="site-description motion-element" itemprop="description">中文测试</p>
+              <p class="site-description motion-element" itemprop="description">Going Go</p>
           </div>
 
           
