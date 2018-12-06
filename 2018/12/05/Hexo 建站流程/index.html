@@ -108,23 +108,24 @@
 
 
 
-  <meta name="description" content="中文测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo-Test">
-<meta property="og:url" content="https://icedrip.github.io/index.html">
+  <meta name="description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。 准备安装 Git &amp;amp; Node.js在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。 12# 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew/usr/bin/ruby -e &quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 建站流程">
+<meta property="og:url" content="https://icedrip.github.io/2018/12/05/Hexo 建站流程/index.html">
 <meta property="og:site_name" content="Hexo-Test">
-<meta property="og:description" content="中文测试">
+<meta property="og:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。 准备安装 Git &amp;amp; Node.js在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。 12# 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew/usr/bin/ruby -e &quot;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-06T07:03:32.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-Test">
-<meta name="twitter:description" content="中文测试">
+<meta name="twitter:title" content="Hexo 建站流程">
+<meta name="twitter:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。 准备安装 Git &amp;amp; Node.js在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。 12# 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew/usr/bin/ruby -e &quot;">
 
 
 
 
 
 
-  <link rel="canonical" href="https://icedrip.github.io/">
+  <link rel="canonical" href="https://icedrip.github.io/2018/12/05/Hexo 建站流程/">
 
 
 
@@ -134,7 +135,7 @@
   };
 </script>
 
-  <title>Hexo-Test</title>
+  <title>Hexo 建站流程 | Hexo-Test</title>
   
 
 
@@ -183,8 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -225,7 +225,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -287,9 +287,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -321,10 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/05/Hexo 建站流程/" class="post-title-link" itemprop="https://icedrip.github.io/index.html">Hexo 建站流程</a>
+          <h1 class="post-title" itemprop="name headline">Hexo 建站流程
               
             
           </h1>
@@ -399,9 +396,7 @@
       
 
       
-        
-          
-            <p>这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。</p>
+        <p>这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。</p>
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="安装-Git-amp-Node-js"><a href="#安装-Git-amp-Node-js" class="headerlink" title="安装 Git &amp; Node.js"></a>安装 Git &amp; Node.js</h2><p>在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew</span></span><br><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Git 安装</span></span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
@@ -427,8 +422,6 @@
 <h2 id="配置站点-config-yml-文件"><a href="#配置站点-config-yml-文件" class="headerlink" title="配置站点 _config.yml 文件"></a>配置站点 _config.yml 文件</h2><p>该配置文件在你的博客文件夹根目录下。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span>   <span class="comment"># 类型填git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment"># 你的Github仓库地址</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span>  <span class="comment"># 分支名称。默认填写 master 如果您使用的是 GitHub ，程序会尝试自动检测。</span></span><br><span class="line"><span class="attr">  message:</span>  <span class="comment"># 提交信息可以自定义，不填的话默认为提交时间</span></span><br></pre></td></tr></table></figure>
 <h2 id="发布到-github"><a href="#发布到-github" class="headerlink" title="发布到 github"></a>发布到 github</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo d -g</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
 
@@ -451,158 +444,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2018/12/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhaoyu Zhong">
-      <meta itemprop="description" content="中文测试">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo-Test">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/05/hello-world/" class="post-title-link" itemprop="https://icedrip.github.io/index.html">Hello World</a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2018/12/05/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-12-05 14:59:18" itemprop="dateCreated datePublished" datetime="2018-12-05T14:59:18+08:00">2018-12-05</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -612,14 +475,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -640,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -685,6 +558,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Git-amp-Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">安装 Git &amp; Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-Git"><span class="nav-number">1.3.</span> <span class="nav-text">配置 Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化-blog-amp-新建文章"><span class="nav-number">2.</span> <span class="nav-text">初始化 blog &amp; 新建文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number">3.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-github-创建对应仓库"><span class="nav-number">3.1.</span> <span class="nav-text">在 github 创建对应仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装部署插件"><span class="nav-number">3.2.</span> <span class="nav-text">安装部署插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置站点-config-yml-文件"><span class="nav-number">3.3.</span> <span class="nav-text">配置站点 _config.yml 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布到-github"><span class="nav-number">3.4.</span> <span class="nav-text">发布到 github</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -820,6 +709,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
