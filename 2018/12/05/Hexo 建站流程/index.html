@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Zhaoyu&#39;s Blog">
 <meta property="og:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-07T01:10:59.339Z">
+<meta property="og:updated_time" content="2018-12-08T09:38:07.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 建站流程">
 <meta name="twitter:description" content="这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。">
@@ -363,7 +363,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-07 09:10:59" itemprop="dateModified" datetime="2018-12-07T09:10:59+08:00">2018-12-07</time>
+                <time title="Modified: 2018-12-08 17:38:07" itemprop="dateModified" datetime="2018-12-08T17:38:07+08:00">2018-12-08</time>
               
             
           </span>
@@ -399,6 +399,9 @@
         <p>这篇文章主要把如何用 Hexo 博客框架建站的流程梳理一遍，尽量简洁明了。</p>
 <a id="more"></a>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="安装-Git-amp-Node-js"><a href="#安装-Git-amp-Node-js" class="headerlink" title="安装 Git &amp; Node.js"></a>安装 Git &amp; Node.js</h3><p>在安装 Hexo 之前，有一些前置工具需要安装，它们是 Git 以及 Node.js（以 MacOS 为例），本文使用 Homebrew 来完成安装。</p>
+<blockquote>
+<p>windows 用户<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">点此下载 GIt</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">点此下载 Node.js</a>。</p>
+</blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果你的 Mac 没有安装 Homebrew，则需要下面的命令安装 Homebrew</span></span><br><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Git 安装</span></span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Node.js 安装(下面两个命令任一)</span></span><br><span class="line">brew install nodejs</span><br><span class="line">brew install node.js</span><br></pre></td></tr></table></figure>
@@ -411,13 +414,14 @@
 <h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><h3 id="初始化-blog"><a href="#初始化-blog" class="headerlink" title="初始化 blog"></a>初始化 blog</h3><p>在自己指定的目录下初始化 blog。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;your_blog_name&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>新建文章，layout 有三种布局，分别为 post (文章)、page (页面)、draft (草稿)，具体区别可以查看<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">这里</a>。</p>
+<p>资源文件夹使用相关说明在<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">这里</a>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br><span class="line">hexo new post 001 <span class="comment"># 新建名 001.md 的文章</span></span><br><span class="line">hexo new page 001 <span class="comment"># 新建名 001.md 的页面</span></span><br><span class="line">hexo new draft 001 <span class="comment"># 新建名 001.md 的草稿</span></span><br></pre></td></tr></table></figure>
 <h3 id="编写草稿"><a href="#编写草稿" class="headerlink" title="编写草稿"></a>编写草稿</h3><p>草稿会放到 <code>source/_drafts/</code> 目录下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft Test</span><br></pre></td></tr></table></figure>
 <p>编写好草稿后，可以用以下命令，将草稿发布到 <code>source/_posts/</code> 目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo publish [layout] &lt;title&gt;</span></span><br><span class="line">hexo publish [post] &lt;title&gt;</span><br></pre></td></tr></table></figure>
 <p>本地启动 Hexo 服务，查看博客效果。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line"><span class="comment"># 同时查看草稿</span></span><br><span class="line">hexo s --draft</span><br></pre></td></tr></table></figure>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>本文部署以 github 为例</p>
 <h3 id="在-github-创建对应仓库"><a href="#在-github-创建对应仓库" class="headerlink" title="在 github 创建对应仓库"></a>在 github 创建对应仓库</h3><ol>
 <li>在 github 新建一个<strong>公开的</strong>，名称为<code>your_username.github.io</code>的仓库。</li>
