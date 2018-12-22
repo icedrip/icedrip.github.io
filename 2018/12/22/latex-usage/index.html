@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="LaTeX，是基于 TeX 的排版系统，对与任何有复杂排版的使用场景，它都可以生成书籍质量的文档，这一点在数学及科技类文档中的表现非常突出。简而言之，LaTeX 是极佳的论文书写及排版工具。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="西电 LaTeX 模板使用说明">
+<meta property="og:url" content="https://icedrip.github.io/2018/12/22/latex-usage/index.html">
+<meta property="og:site_name" content="Zhaoyu&#39;s Blog">
+<meta property="og:description" content="LaTeX，是基于 TeX 的排版系统，对与任何有复杂排版的使用场景，它都可以生成书籍质量的文档，这一点在数学及科技类文档中的表现非常突出。简而言之，LaTeX 是极佳的论文书写及排版工具。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://icedrip.github.io/2018/12/22/latex-usage/error1.png">
+<meta property="og:image" content="https://icedrip.github.io/2018/12/22/latex-usage/error2.png">
+<meta property="og:image" content="https://icedrip.github.io/2018/12/22/latex-usage/error2.png">
+<meta property="og:updated_time" content="2018-12-22T14:02:41.219Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="西电 LaTeX 模板使用说明">
+<meta name="twitter:description" content="LaTeX，是基于 TeX 的排版系统，对与任何有复杂排版的使用场景，它都可以生成书籍质量的文档，这一点在数学及科技类文档中的表现非常突出。简而言之，LaTeX 是极佳的论文书写及排版工具。">
+<meta name="twitter:image" content="https://icedrip.github.io/2018/12/22/latex-usage/error1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://icedrip.github.io/2018/12/22/latex-usage/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>西电 LaTeX 模板使用说明 | Zhaoyu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhaoyu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">彼岸织锦，此端弄笛</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2018/12/22/latex-usage/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaoyu Zhong">
+      <meta itemprop="description" content="An hour of focused attention may be worth more than days of partial attention.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaoyu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">西电 LaTeX 模板使用说明
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-22 22:02:41" itemprop="dateCreated datePublished" datetime="2018-12-22T22:02:41+08:00">2018-12-22</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>LaTeX，是基于 TeX 的排版系统，对与任何有复杂排版的使用场景，它都可以生成书籍质量的文档，这一点在数学及科技类文档中的表现非常突出。简而言之，LaTeX 是极佳的论文书写及排版工具。</p>
+<a id="more"></a>
+<h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p>LaTeX 可以类比为 HTML 网页。类似网页一个 <code>.html</code> 文件控制文档结构，一个 <code>.css</code> 文件控制文档样式，LaTeX 中的 <code>.tex</code> 文件用来控制文档结构，<code>.cls</code> <code>.sty</code> 文件控制样式。</p>
+<p>LaTeX 模板常见的文件类型有很多：</p>
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.dtx</td>
+<td>Documented LaTex sources，宏包重要部分</td>
+</tr>
+<tr>
+<td>.ins</td>
+<td>installation，控制 TeX 从 .dtx 文件里释放宏包</td>
+</tr>
+<tr>
+<td>.cfg</td>
+<td>config，配置文件，可由上面两个文件生成</td>
+</tr>
+<tr>
+<td>.sty</td>
+<td>style files，使用<code>\usepackage{...}</code>命令加载</td>
+</tr>
+<tr>
+<td>.cls</td>
+<td>classes files，类文件，使用<code>\documentclass{...}</code>命令加载</td>
+</tr>
+<tr>
+<td>.aux</td>
+<td>auxiliary，辅助文件，不影响正常使用</td>
+</tr>
+<tr>
+<td>.bst</td>
+<td>BibTeX style file，用来控制参考文献样式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安装-LaTeX"><a href="#安装-LaTeX" class="headerlink" title="安装 LaTeX"></a>安装 LaTeX</h2><p>选择一个 TeX 发行版安装 LaTeX 环境，以 MacOS 为例，可以在<a href="https://tug.org/mactex/" target="_blank" rel="noopener">这里下载安装 MacTeX</a>，安装包比较大，足足有大约 3.2G （17 April 2018），完整安装会让你省心不少。</p>
+<p>完成安装后，Applications 目录中会出现 5 个软件：BibDesk、LaTeXiT、TeX Live Utility、TeXShop、Excalibur。</p>
+<p>其中 TeXShop 是 MacTeX 发行版自带的 LaTeX 编辑器。</p>
+<h2 id="西电-Latex-模板"><a href="#西电-Latex-模板" class="headerlink" title="西电 Latex 模板"></a>西电 Latex 模板</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><blockquote>
+<p><a href="https://gr.xidian.edu.cn/info/1047/5087.htm" target="_blank" rel="noopener">西安电子科技大学申请学术硕士学位相关资料</a><br>西电研究生院提供的学硕模板宏包，编译方式为 LaTeX，采用 GBK 编码，仅支持 CTeX (2.9.2)。</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/xdlinux/xdba-thesis" target="_blank" rel="noopener">xdlinux/xdba-thesis</a><br>西电本科毕业设计论文LaTeX模板宏包 - Latest commit  on 7 Apr 2017</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/fredqi/xduthesis" target="_blank" rel="noopener">fredqi/xduthesis</a><br>本科、硕士和博士模板，较老 - Latest commit on 11 Feb 2016</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/StickCui/XDUthesis-personal" target="_blank" rel="noopener">StickCui/XDUthesis-personal</a><br>Latest commit  on 3 Jun 2016</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/103yiran/XDUthesis_xelatex" target="_blank" rel="noopener">103yiran/XDUthesis_xelatex</a><br>根据西电研究生院发布的研究生学位论文模板（2015版）修改而成，支持 XeLaTeX 编译，采用 UTF-8 编码，支持 Linux 和 TeX Live 2016。- Latest commit on 13 Jun 2017</p>
+</blockquote>
+<h3 id="研究生院模板"><a href="#研究生院模板" class="headerlink" title="研究生院模板"></a>研究生院模板</h3><h4 id="文件编码问题"><a href="#文件编码问题" class="headerlink" title="文件编码问题"></a>文件编码问题</h4><p>打开任意一个包含中文的 <code>.tex</code> 文件，发现中文全部显示乱码，可以用以下命令查看文档编码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file abstract.tex</span><br></pre></td></tr></table></figure>
+<p>返回：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstract.tex: LaTeX document text, ISO-8859 text, with very long lines, with CRLF line terminators</span><br></pre></td></tr></table></figure>
+<p>可见文件并非 TexShop 默认打开文件时用的 utf-8 编码，<a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859#%E5%90%84%E7%A7%8DISO_8859%E5%AD%97%E7%AC%A6%E9%9B%86" target="_blank" rel="noopener">ISO-8859</a> 是一个字符集，其并不能表示中文，但是配合电脑自己的其他编码可以正确显示中文。</p>
+<p>修改 TexShop -&gt; 偏好设置 -&gt; 源代码 -&gt; 编码 为 GBK，<strong>Command-Q</strong> 退出 TexShop，重新打开文件后，可以正常显示中文。但是想把默认编码改为 utf-8 。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv -f GBK -t UTF-8 abstract.tex -o abstract-utf8.tex</span><br></pre></td></tr></table></figure>
+<h4 id="排版默认指令"><a href="#排版默认指令" class="headerlink" title="排版默认指令"></a>排版默认指令</h4><p><strong>Command-T</strong> 编译，提示以下错误：</p>
+<img src="/2018/12/22/latex-usage/error1.png">
+<p>使用对中文支持更好的 XeLaTeX 排版，打开偏好设置，在排版 -&gt; 默认指令，修改 LaTeX 为 键入指令 XeLaTeX。</p>
+<h4 id="dvipdfm"><a href="#dvipdfm" class="headerlink" title="dvipdfm"></a>dvipdfm</h4><p>重新编译，提示以下错误：</p>
+<img src="/2018/12/22/latex-usage/error2.png">
+<p>找到 <code>\RequirePackage[dvipdfm]{hyperref}</code>，删除 <code>[dvipdfm]</code></p>
+<h4 id="Undefined-control-sequence"><a href="#Undefined-control-sequence" class="headerlink" title="Undefined control sequence"></a>Undefined control sequence</h4><p>重新编译，提示错误：</p>
+<img src="/2018/12/22/latex-usage/error2.png">
+<p>找到<code>\def\XDU@value@thesis@title{西安电子科技大学研究生学位论文\par撰写要求（2015年修订版）}</code>, 在 <code>\par</code> 左右添加空格。</p>
+<p>重新编译，得到 pdf 文档。正文存在一些显示问题，比如中文 <code>～</code> 符号就无法如期显示、文档的字体不正确，需下载安装对应字体等。</p>
+<h3 id="103yiran-XDUthesis-xelatex"><a href="#103yiran-XDUthesis-xelatex" class="headerlink" title="103yiran/XDUthesis_xelatex"></a>103yiran/XDUthesis_xelatex</h3><h4 id="缺少字体"><a href="#缺少字体" class="headerlink" title="缺少字体"></a>缺少字体</h4><p>首次编译，MacOS 下缺少 SimSun（中易宋体）、SimHei（中易黑体）两款字体，安装对应字体后问题解决。</p>
+<h4 id="引用显示不正确"><a href="#引用显示不正确" class="headerlink" title="引用显示不正确"></a>引用显示不正确</h4><p>再次编译，引用论文时角标没有正常显示（空白或无意义字符），更新 TeXShop 至 4.21 版本后问题解决。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>TeX 众多的发行版方便了 LaTeX 环境的搭建，主要是宏包的选择问题。</p>
+<p>西电研究生院提供的宏包较为老旧，存在很多小问题，即便能够通过编译了，正文还需要做一些修改，比如中文 <code>～</code> 符号就无法如期显示。</p>
+<p><a href="https://github.com/103yiran/XDUthesis_xelatex" target="_blank" rel="noopener">103yiran</a> 修改过的版本则好用很多，除了字体缺失，其他没有什么问题，十分推荐使用。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/17/mysql-installation/" rel="next" title="MySQL 安装">
+                <i class="fa fa-chevron-left"></i> MySQL 安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhaoyu Zhong</p>
+              <p class="site-description motion-element" itemprop="description">An hour of focused attention may be worth more than days of partial attention.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概览"><span class="nav-number">1.</span> <span class="nav-text">概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-LaTeX"><span class="nav-number">2.</span> <span class="nav-text">安装 LaTeX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#西电-Latex-模板"><span class="nav-number">3.</span> <span class="nav-text">西电 Latex 模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">3.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#研究生院模板"><span class="nav-number">3.2.</span> <span class="nav-text">研究生院模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件编码问题"><span class="nav-number">3.2.1.</span> <span class="nav-text">文件编码问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排版默认指令"><span class="nav-number">3.2.2.</span> <span class="nav-text">排版默认指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dvipdfm"><span class="nav-number">3.2.3.</span> <span class="nav-text">dvipdfm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Undefined-control-sequence"><span class="nav-number">3.2.4.</span> <span class="nav-text">Undefined control sequence</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#103yiran-XDUthesis-xelatex"><span class="nav-number">3.3.</span> <span class="nav-text">103yiran/XDUthesis_xelatex</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缺少字体"><span class="nav-number">3.3.1.</span> <span class="nav-text">缺少字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用显示不正确"><span class="nav-number">3.3.2.</span> <span class="nav-text">引用显示不正确</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhaoyu Zhong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
