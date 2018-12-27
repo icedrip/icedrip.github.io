@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Apache Accumulo® is a sorted, distributed key/value store that provides robust, scalable data storage and retrieval.">
+<meta name="keywords" content="accumulo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Accumulo 安装">
+<meta property="og:url" content="https://icedrip.github.io/2018/12/27/accumulo-installation/index.html">
+<meta property="og:site_name" content="Zhaoyu&#39;s Blog">
+<meta property="og:description" content="Apache Accumulo® is a sorted, distributed key/value store that provides robust, scalable data storage and retrieval.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://icedrip.github.io/2018/12/27/accumulo-installation/error1.png">
+<meta property="og:updated_time" content="2018-12-27T04:38:05.234Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Accumulo 安装">
+<meta name="twitter:description" content="Apache Accumulo® is a sorted, distributed key/value store that provides robust, scalable data storage and retrieval.">
+<meta name="twitter:image" content="https://icedrip.github.io/2018/12/27/accumulo-installation/error1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://icedrip.github.io/2018/12/27/accumulo-installation/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Accumulo 安装 | Zhaoyu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhaoyu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">彼岸织锦，此端弄笛</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2018/12/27/accumulo-installation/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaoyu Zhong">
+      <meta itemprop="description" content="An hour of focused attention may be worth more than days of partial attention.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaoyu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Accumulo 安装
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-27 12:38:05" itemprop="dateCreated datePublished" datetime="2018-12-27T12:38:05+08:00">2018-12-27</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Apache Accumulo® is a sorted, distributed key/value store that provides robust, scalable data storage and retrieval.</p>
+<a id="more"></a>
+<h2 id="先决环境"><a href="#先决环境" class="headerlink" title="先决环境"></a>先决环境</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装 Accumulo 之前，保证你的电脑已经安装 Java (&gt;=1.8)、Hadoop、Zookeeper。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> java version 11.0.1</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> brew cask install java</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> hadoop 3.1.1</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> brew install hadoop</span></span><br></pre></td></tr></table></figure>
+<p>出现如下 Error，需要手动创建当前不存在的目录 <code>/usr/local/sbin</code>，并把当前用户对目录 <code>sbin</code> 的权限改为读写，然后再手动执行 <code>brew link hadoop</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Error: The `brew link` step did not complete successfully</span><br><span class="line">The formula built, but is not symlinked into /usr/local</span><br><span class="line">Could not symlink sbin/FederationStateStore</span><br><span class="line">/usr/local/sbin is not writable.</span><br><span class="line"></span><br><span class="line">You can try again using:</span><br><span class="line">  brew link hadoop</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> brew link hadoop</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 出现下面提示则完成</span></span><br><span class="line">Linking /usr/local/Cellar/hadoop/3.1.1... 27 symlinks created</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> brew install zookeeper</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="配置-Hadoop"><a href="#配置-Hadoop" class="headerlink" title="配置 Hadoop"></a>配置 Hadoop</h3><p>Hadoop 被安装到了 <code>/usr/local/Cellar/hadoop</code> 目录下。</p>
+<p>配置 <code>usr/local/Cellar/hadoop/2.8.0/libexec/etc/hadoop</code> 目录下 <code>hadoop-env.sh</code>：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># The java implementation to use. By default, this environment</span><br><span class="line"># variable is REQUIRED on ALL platforms except OS X!</span><br><span class="line"># export JAVA_HOME=</span><br><span class="line"></span><br><span class="line"># Extra Java CLASSPATH elements.  Optional.</span><br><span class="line"># export HADOOP_CLASSPATH=</span><br><span class="line"></span><br><span class="line"># The maximum amount of heap to use, in MB. Default is 1000.</span><br><span class="line">export HADOOP_HEAPSIZE=2000</span><br><span class="line"></span><br><span class="line"># Extra Java runtime options.  Empty by default.</span><br><span class="line">export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc=kdc0.ox.ac.uk:kdc1.ox.ac.uk"</span><br><span class="line"># export HADOOP_OPTS=-server</span><br></pre></td></tr></table></figure>
+<hr>
+<p>配置 <code>core-site.xml</code>，指定了 <code>NameNode</code> 的主机名与端口</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Cellar/hadoop/hdfs/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">description</span>&gt;</span>默认为/tmp/hadoop-$&#123;user.name&#125;<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>配置 <code>hdfs-site.xml</code>，指定了 HDFS 的默认参数副本数，因为仅运行在1个节点上，所以这里的副本数为1。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>配置 <code>mapred-site.xml</code>，指定 mapreduce 运行在 yarn 上。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>配置 <code>yarn-site.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="无密码登录-localhost"><a href="#无密码登录-localhost" class="headerlink" title="无密码登录 localhost"></a>无密码登录 localhost</h3><p>生成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 存在某个自己指定的目录下，不指定的话会生成在以下目录</span></span><br><span class="line">/Users/zhaoyu/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<hr>
+<p>拷贝</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 把 id_rsa.pub 拷贝到 .ssh/authorized_keys</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cp cp .ssh/id_rsa.pub .ssh/authorized_keys</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动-Hadoop"><a href="#启动-Hadoop" class="headerlink" title="启动 Hadoop"></a>启动 Hadoop</h3><p>格式化 Namenode</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hadoop namenode -format</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>启动 HDFS</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入 hadoop 所在目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/Cellar/hadoop/3.1.1/sbin</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./start-dfs.sh</span></span><br><span class="line">Starting namenodes on [localhost]</span><br><span class="line">Starting datanodes</span><br><span class="line">Starting secondary namenodes [zhaoyu-MBP]</span><br></pre></td></tr></table></figure>
+<p>如果成功了，过程中需要输入三次密码；如果报错「connection refused」，则需要在系统设置里开启远程登录。</p>
+<hr>
+<p>启动 yarn</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/Cellar/hadoop/3.1.1/sbin</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./start-yarn.sh</span></span><br><span class="line">Starting resourcemanager</span><br><span class="line">Starting nodemanagers</span><br></pre></td></tr></table></figure>
+<hr>
+<p>检查是否成功启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> jps</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>此时在浏览器中访问 </p>
+<ul>
+<li><code>localhost:8088</code> 或 <code>localhost:9870</code> (Hadoop 3.x 版本)</li>
+<li><code>localhost:50070</code> (Hadoop 2.x 版本)</li>
+</ul>
+<p>可以看到Hadoop的界面。</p>
+<hr>
+<p>相关文章：</p>
+<blockquote>
+<p><a href="https://oliverlph.github.io/2018/06/23/Hadoop%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B/" target="_blank" rel="noopener">Hadoop(3.0.3)安装和配置过程（Mac）</a><br><a href="https://segmentfault.com/a/1190000009103629#articleHeader8" target="_blank" rel="noopener">Mac环境下Hadoop的安装与配置</a><br><a href="https://zhuanlan.zhihu.com/p/32650239" target="_blank" rel="noopener">Mac 下安装和配置 Hadoop</a><br><a href="https://zhuanlan.zhihu.com/p/33117305" target="_blank" rel="noopener">Mac OS X 上搭建 Hadoop 开发环境指南</a><br><a href="https://www.jianshu.com/p/4a65fd034871" target="_blank" rel="noopener">macOS安装hadoop 3.0.0伪分布式教程</a></p>
+</blockquote>
+<h3 id="启动-ZooKeeper"><a href="#启动-ZooKeeper" class="headerlink" title="启动 ZooKeeper"></a>启动 ZooKeeper</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/Cellar/zookeeper/3.4.13/bin</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer.sh start</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/Cellar/zookeeper/3.4.13/bin</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> zkServer stop</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装-Accumulo"><a href="#安装-Accumulo" class="headerlink" title="安装 Accumulo"></a>安装 Accumulo</h2><p>下载解压后</p>
+<p>build 本地库，2.0 以下版本失败不用管，可以先进行后面的步骤。</p>
+<p>2.0 版本失败的话需要把 <code>conf/accumulo.properties</code> 的 <code>tserve.memory.maps.native.enabled</code> 设置为 <code>false</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 2.0 以下版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./bin/build_native_library.sh</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.0 版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./bin/accumulo-util build-native</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>配置文件生成（2.0 以下版本），2.0 版本没有这一步</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./bin/bootstrap_config.sh</span></span><br></pre></td></tr></table></figure>
+<p>有一些选项，我选的 2G、Java、Hadoop 3</p>
+<hr>
+<p>配置 <code>conf/accumulo-site.xml</code>（2.0 以下版本）<br>配置 <code>conf/accumulo.properties</code>（2.0 以上版本）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>instance.volumes<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000/accumulo<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>comma separated list of URIs for volumes. example: hdfs://localhost:9000/accumulo<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 2.0</span><br><span class="line">instance.volumes=hdfs://localhost:9000/accumulo</span><br></pre></td></tr></table></figure>
+<p>配置  <code>conf/accumulo-env.sh</code>（2.0 以下版本）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># &lt; 2.0</span><br><span class="line">export HADOOP_PREFIX=/usr/local/Cellar/hadoop/3.1.1/libexec</span><br><span class="line">export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home</span><br><span class="line">export ZOOKEEPER_HOME=/usr/local/Cellar/zookeeper/3.4.13/libexec</span><br><span class="line"></span><br><span class="line"># &gt;= 2.0</span><br><span class="line">export HADOOP_HOME=&quot;$&#123;HADOOP_HOME:-/usr/local/Cellar/hadoop/3.1.1/libexec&#125;&quot;</span><br><span class="line">export ZOOKEEPER_HOME=&quot;$&#123;ZOOKEEPER_HOME:-/usr/local/Cellar/zookeeper/3.4.13/libexec&#125;&quot;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ $ACCUMULO_HOME/bin/accumulo init</span><br></pre></td></tr></table></figure>
+<p>初始化遇到问题</p>
+<img src="/2018/12/27/accumulo-installation/error1.png">
+<p>Hadoop 3.1 去除了 commons-configuration 1.6，而 Accumulo 1.9.2 也没有，所以报错；Accumulo 2.0 之后添加了该包，十分坑爹。</p>
+<p><a href="https://github.com/apache/accumulo/issues/569" target="_blank" rel="noopener">Accumulo 1.9.x does not work with Hadoop 3.x</a><br><a href="https://github.com/apache/fluo-uno/pull/186" target="_blank" rel="noopener">Adding Hadoop 3.1.0 checksum</a></p>
+<p>改用 2.0-alpha-1 版本后重新配置（上面写了），再次初始化。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> accumulo init</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 期间会让输入 instance name 和 initial password <span class="keyword">for</span> root</span></span><br><span class="line">instance-1</span><br></pre></td></tr></table></figure>
+<p>有一些 warning</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2018-12-27 11:40:36,475 [Configuration.deprecation] INFO : dfs.replication.min is deprecated. Instead, use dfs.namenode.replication.min</span><br><span class="line">2018-12-27 11:40:37,445 [Configuration.deprecation] INFO : dfs.block.size is deprecated. Instead, use dfs.blocksize</span><br></pre></td></tr></table></figure>
+<h2 id="启动-Accumulo"><a href="#启动-Accumulo" class="headerlink" title="启动 Accumulo"></a>启动 Accumulo</h2><p>有几种启动方法：</p>
+<ol>
+<li>使用 <code>accumulo</code> 命令在前台启动 processes，这不会重定向 stderr/stdout。</li>
+<li>使用 <code>accumulo-service</code> 以服务启动 processes，其使用 <code>accumulo</code> 命令在后台启动 processes，重定向 stderr/stdout 并管理 pid files。</li>
+<li>使用 <code>accumulo-cluster</code> 在一个或多个节点启动 cluster。适合本地开发/测试或在没有使用 cluster 管理工具的生产环境。</li>
+</ol>
+<h3 id="启动-Accumulo-processes"><a href="#启动-Accumulo-processes" class="headerlink" title="启动 Accumulo processes"></a>启动 Accumulo processes</h3><p>前台启动，<code>ctrl-c</code> 退出</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> accumulo tserver</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动-Accumulo-services"><a href="#启动-Accumulo-services" class="headerlink" title="启动 Accumulo services"></a>启动 Accumulo services</h3><p>后台启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> accumulo-service tserver start</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动-Accumulo-cluster"><a href="#启动-Accumulo-cluster" class="headerlink" title="启动 Accumulo cluster"></a>启动 Accumulo cluster</h3><p>需要创建额外的配置文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> accumulo-cluster create-config</span></span><br></pre></td></tr></table></figure>
+<p>这在会在 <code>conf/</code> 目录下创建五个文件（<code>master</code>, <code>gc</code>, <code>monitor</code>, <code>tservers</code>, <code>tracers</code>），其包含了 Accumulo 服务运行所在的 node names。默认所有文件都设置为 <code>localhost</code>，如果你在单节点运行 Accumulo cluster，这些文件不用修改。</p>
+<h4 id="多节点配置"><a href="#多节点配置" class="headerlink" title="多节点配置"></a>多节点配置</h4><ul>
+<li><code>masters</code></li>
+<li><code>gc</code></li>
+<li><code>monitor</code></li>
+<li><code>tservers</code></li>
+<li><code>tracers</code></li>
+</ul>
+<p><code>accumulo-cluster</code> 脚本使用 ssh 启动远程节点的 processes，所以启动 Accumulo 之前，需要在 cluster 配置无密码 ssh 登录。</p>
+<h4 id="启动-cluster"><a href="#启动-cluster" class="headerlink" title="启动 cluster"></a>启动 cluster</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> accumulo-cluster start</span></span><br></pre></td></tr></table></figure>
+<h2 id="Accumulo-shell"><a href="#Accumulo-shell" class="headerlink" title="Accumulo shell"></a>Accumulo shell</h2><p>启动shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> accumulo shell -u root</span></span><br></pre></td></tr></table></figure>
+<p>使用浏览器连接 Accumulo monitor。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;hostname in conf/monitor&gt;:9995/</span><br></pre></td></tr></table></figure>
+<h2 id="停止-Accumulo"><a href="#停止-Accumulo" class="headerlink" title="停止 Accumulo"></a>停止 Accumulo</h2><p>停止 Accumulo service <code>accumulo-service tserver stop</code></p>
+<p>停止 Accumulo cluster <code>accumulo-cluster stop</code></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/accumulo/" rel="tag"># accumulo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/22/latex-usage/" rel="next" title="西电 LaTeX 模板使用说明">
+                <i class="fa fa-chevron-left"></i> 西电 LaTeX 模板使用说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhaoyu Zhong</p>
+              <p class="site-description motion-element" itemprop="description">An hour of focused attention may be worth more than days of partial attention.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#先决环境"><span class="nav-number">1.</span> <span class="nav-text">先决环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Hadoop"><span class="nav-number">1.2.</span> <span class="nav-text">配置 Hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无密码登录-localhost"><span class="nav-number">1.3.</span> <span class="nav-text">无密码登录 localhost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-Hadoop"><span class="nav-number">1.4.</span> <span class="nav-text">启动 Hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-ZooKeeper"><span class="nav-number">1.5.</span> <span class="nav-text">启动 ZooKeeper</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Accumulo"><span class="nav-number">2.</span> <span class="nav-text">安装 Accumulo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">2.1.</span> <span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-Accumulo"><span class="nav-number">3.</span> <span class="nav-text">启动 Accumulo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-Accumulo-processes"><span class="nav-number">3.1.</span> <span class="nav-text">启动 Accumulo processes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-Accumulo-services"><span class="nav-number">3.2.</span> <span class="nav-text">启动 Accumulo services</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-Accumulo-cluster"><span class="nav-number">3.3.</span> <span class="nav-text">启动 Accumulo cluster</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多节点配置"><span class="nav-number">3.3.1.</span> <span class="nav-text">多节点配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动-cluster"><span class="nav-number">3.3.2.</span> <span class="nav-text">启动 cluster</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accumulo-shell"><span class="nav-number">4.</span> <span class="nav-text">Accumulo shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止-Accumulo"><span class="nav-number">5.</span> <span class="nav-text">停止 Accumulo</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhaoyu Zhong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
