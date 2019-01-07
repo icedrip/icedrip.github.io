@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="macOS 10.14.1 MySQL 安装。">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.">
+<meta name="keywords" content="vim,cheatsheet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 安装">
-<meta property="og:url" content="https://icedrip.github.io/2018/12/17/mysql-installation/index.html">
+<meta property="og:title" content="Vim 使用手册">
+<meta property="og:url" content="https://icedrip.github.io/2019/01/07/vim-manual/index.html">
 <meta property="og:site_name" content="Zhaoyu&#39;s Blog">
-<meta property="og:description" content="macOS 10.14.1 MySQL 安装。">
+<meta property="og:description" content="Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-22T14:57:38.225Z">
+<meta property="og:updated_time" content="2019-01-07T14:01:45.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 安装">
-<meta name="twitter:description" content="macOS 10.14.1 MySQL 安装。">
+<meta name="twitter:title" content="Vim 使用手册">
+<meta name="twitter:description" content="Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.">
 
 
 
 
 
 
-  <link rel="canonical" href="https://icedrip.github.io/2018/12/17/mysql-installation/">
+  <link rel="canonical" href="https://icedrip.github.io/2019/01/07/vim-manual/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>MySQL 安装 | Zhaoyu's Blog</title>
+  <title>Vim 使用手册 | Zhaoyu's Blog</title>
   
 
 
@@ -322,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2018/12/17/mysql-installation/">
+    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2019/01/07/vim-manual/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhaoyu Zhong">
@@ -339,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL 安装
+          <h1 class="post-title" itemprop="name headline">Vim 使用手册
               
             
           </h1>
@@ -364,25 +364,9 @@
                 
               
 
-              <time title="Created: 2018-12-17 22:16:28" itemprop="dateCreated datePublished" datetime="2018-12-17T22:16:28+08:00">2018-12-17</time>
+              <time title="Created: 2019-01-07 22:01:45" itemprop="dateCreated datePublished" datetime="2019-01-07T22:01:45+08:00">2019-01-07</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-22 22:57:38" itemprop="dateModified" datetime="2018-12-22T22:57:38+08:00">2018-12-22</time>
-              
             
           </span>
 
@@ -414,23 +398,296 @@
       
 
       
-        <p>macOS 10.14.1 MySQL 安装。</p>
+        <p>Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is included as “vi” with most UNIX systems and with Apple OS X.</p>
 <a id="more"></a>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>本文使用 Homebrew 安装。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>使用 Homebrew 安装完成之后，会有以下提示，此时 MySQL 并没有设置用户密码，需要做一些配置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">We&apos;ve installed your MySQL database without a root password. To secure it run:</span><br><span class="line">    mysql_secure_installation</span><br><span class="line"></span><br><span class="line">MySQL is configured to only allow connections from localhost by default</span><br><span class="line"></span><br><span class="line">To connect run:</span><br><span class="line">    mysql -uroot</span><br><span class="line"></span><br><span class="line">To have launchd start mysql now and restart at login:</span><br><span class="line">  brew services start mysql</span><br><span class="line">Or, if you don&apos;t want/need a background service you can just run:</span><br><span class="line">  mysql.server start</span><br></pre></td></tr></table></figure>
-<h3 id="启动-amp-关闭服务"><a href="#启动-amp-关闭服务" class="headerlink" title="启动 &amp; 关闭服务"></a>启动 &amp; 关闭服务</h3><p>先启动服务再设置密码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 后台启动</span></span><br><span class="line">brew services start mysql</span><br><span class="line"><span class="meta">#</span><span class="bash"> 前台启动</span></span><br><span class="line">mysql.server start</span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭</span></span><br><span class="line">mysql.server stop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启</span></span><br><span class="line">mysql.server restart</span><br></pre></td></tr></table></figure>
-<h3 id="执行几个设置"><a href="#执行几个设置" class="headerlink" title="执行几个设置"></a>执行几个设置</h3><ol>
-<li>为 root 设置密码</li>
-<li>删除匿名账号</li>
-<li>取消root用户远程登录</li>
-<li>删除test库和对test库的访问权限</li>
-<li>刷新授权表使修改生效</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 如果有权限问题，加上 sudo</span></span><br><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"><span class="meta">#</span><span class="bash"> 输入设置的密码即可登录</span></span><br></pre></td></tr></table></figure>
+<h2 id="Vim-键位"><a href="#Vim-键位" class="headerlink" title="Vim 键位"></a>Vim 键位</h2><p>主要列出来一些常用键位，以备查阅。</p>
+<h3 id="一般模式"><a href="#一般模式" class="headerlink" title="一般模式"></a>一般模式</h3><h4 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h4><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h</code></td>
+<td>光标左移一个字符</td>
+</tr>
+<tr>
+<td><code>j</code></td>
+<td>光标下移一个字符</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td>光标上移一个字符</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>光标右移一个字符</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>f</code></td>
+<td>PageDown</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>b</code></td>
+<td>PageUp</td>
+</tr>
+<tr>
+<td>n <code>Space</code></td>
+<td>光标右移 n 个字符</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>行首</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>行尾</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>移动到最后一行</td>
+</tr>
+<tr>
+<td>n<code>G</code></td>
+<td>移动到第 n 行</td>
+</tr>
+<tr>
+<td><code>gg</code></td>
+<td>移动到第一行 = <code>1G</code></td>
+</tr>
+<tr>
+<td>n <code>Enter</code></td>
+<td>光标下移 n 行</td>
+</tr>
+</tbody>
+</table>
+<h4 id="搜索替换"><a href="#搜索替换" class="headerlink" title="搜索替换"></a>搜索替换</h4><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/word</code></td>
+<td>搜索下一个 word 字符串</td>
+</tr>
+<tr>
+<td><code>?word</code></td>
+<td>搜索上一个 word 字符串</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>重复上一个搜索动作。<code>/word</code>+<code>n</code> 连续搜索下一个 word 字符串</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>反向重复上一个搜索动作。</td>
+</tr>
+<tr>
+<td><code>:n1,n2s/word1/word2/g</code></td>
+<td>n1 n2 为数字。在第 n1 n2 行之间寻找 word1 并将该字符串取代为 word2。</td>
+</tr>
+<tr>
+<td><code>:1,$s/word1/word2/g</code> or <code>:%s/word1/word2/g</code></td>
+<td>第一行到最后一行寻找 word1 并替换为 word2。</td>
+</tr>
+<tr>
+<td><code>:1,$s/word1/word2/gc</code> or <code>:%s/word1/word2/gc</code></td>
+<td>第一行到最后一行寻找 word1 并替换为 word2。提示用户确认替换。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="删除、复制与粘贴"><a href="#删除、复制与粘贴" class="headerlink" title="删除、复制与粘贴"></a>删除、复制与粘贴</h4><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>Del</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Backspace</td>
+</tr>
+<tr>
+<td>n <code>x</code></td>
+<td>向后删除 n 个字符</td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>删除当前行</td>
+</tr>
+<tr>
+<td>n <code>dd</code></td>
+<td>删除向下 n 行</td>
+</tr>
+<tr>
+<td><code>d1G</code></td>
+<td>删除光标所在到第一行的所有数据</td>
+</tr>
+<tr>
+<td><code>dG</code></td>
+<td>删除光标所在到最后一行的所有数据</td>
+</tr>
+<tr>
+<td><code>d$</code></td>
+<td>删除游标所在处，到该行的最后一个字符</td>
+</tr>
+<tr>
+<td><code>d0</code></td>
+<td>删除游标所在处，到该行的最前面一个字符</td>
+</tr>
+<tr>
+<td><code>yy</code></td>
+<td>复制当前行</td>
+</tr>
+<tr>
+<td>n <code>yy</code></td>
+<td>复制向下 n 行</td>
+</tr>
+<tr>
+<td><code>y1G</code></td>
+<td>复制游标所在行到第一行的所有数据</td>
+</tr>
+<tr>
+<td><code>yG</code></td>
+<td>复制游标所在行到最后一行的所有数据</td>
+</tr>
+<tr>
+<td><code>y0</code></td>
+<td>复制光标所在的那个字符到该行行首的所有数据</td>
+</tr>
+<tr>
+<td><code>y$</code></td>
+<td>复制光标所在的那个字符到该行行尾的所有数据</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>粘贴到下一行</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>粘贴到上一行</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>复原前一个动作。(常用)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>r</code></td>
+<td>重做上一个动作。(常用)</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>重复前一个动作的意思</td>
+</tr>
+</tbody>
+</table>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p><code>Ctrl</code> + <code>v</code> 进入块选择模式，然后移动光标选中你要注释的行，再按大写的 I 进入行首插入模式输入注释符号如 // 或 #，输入完毕之后，按两下 ESC，Vim 会自动将你选中的所有行首都加上注释，保存退出完成注释。</p>
+<p><code>Ctrl</code> + <code>v</code> 进入块选择模式，选中你要删除的行首的注释符号，注意 // 要选中两个，选好之后按 d 即可删除注释，ESC 保存退出。</p>
+<h3 id="一般模式-gt-编辑模式"><a href="#一般模式-gt-编辑模式" class="headerlink" title="一般模式 -&gt; 编辑模式"></a>一般模式 -&gt; 编辑模式</h3><h4 id="进入输入或取代的编辑模式"><a href="#进入输入或取代的编辑模式" class="headerlink" title="进入输入或取代的编辑模式"></a>进入输入或取代的编辑模式</h4><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td>从目前光标所在处输入</td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>在目前所在行的第一个非空格符处开始输入</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>从目前光标所在的下一个字符处开始输入</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>从光标所在行的最后一个字符处开始输入</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>在目前光标所在的下一行处输入新的一行</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>在目前光标所在处的上一行输入新的一行</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>取代光标所在的那一个字符一次</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>一直取代光标所在的文字，直到按下 ESC 为止</td>
+</tr>
+</tbody>
+</table>
+<h3 id="一般模式-gt-命令模式"><a href="#一般模式-gt-命令模式" class="headerlink" title="一般模式 -&gt; 命令模式"></a>一般模式 -&gt; 命令模式</h3><h4 id="指令行的储存、离开等指令"><a href="#指令行的储存、离开等指令" class="headerlink" title="指令行的储存、离开等指令"></a>指令行的储存、离开等指令</h4><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:w</code></td>
+<td>将编辑的数据写入硬盘档案中</td>
+</tr>
+<tr>
+<td><code>:w!</code></td>
+<td>强制写入该档案</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td>离开 vi (常用)</td>
+</tr>
+<tr>
+<td><code>:q!</code></td>
+<td>强制离开不储存档案</td>
+</tr>
+<tr>
+<td><code>:wq</code></td>
+<td>储存后离开</td>
+</tr>
+<tr>
+<td><code>ZZ</code></td>
+<td>若档案没有更动，则不储存离开，若档案已经被更动过，则储存后离开</td>
+</tr>
+</tbody>
+</table>
+<h4 id="vim-环境的变更"><a href="#vim-环境的变更" class="headerlink" title="vim 环境的变更"></a>vim 环境的变更</h4><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:set nu</code></td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td><code>:set nonu</code></td>
+<td>取消行号</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
 
@@ -453,7 +710,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/vim/" rel="tag"># vim</a>
+          
+            <a href="/tags/cheatsheet/" rel="tag"># cheatsheet</a>
           
         </div>
       
@@ -466,8 +725,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/05/Hexo-建站流程/" rel="next" title="Hexo 建站流程">
-                <i class="fa fa-chevron-left"></i> Hexo 建站流程
+              <a href="/2018/12/27/accumulo-installation/" rel="next" title="Accumulo 安装">
+                <i class="fa fa-chevron-left"></i> Accumulo 安装
               </a>
             
           </div>
@@ -475,10 +734,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/22/latex-usage/" rel="prev" title="西电 LaTeX 模板使用说明">
-                西电 LaTeX 模板使用说明 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +869,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-amp-关闭服务"><span class="nav-number">2.1.</span> <span class="nav-text">启动 &amp; 关闭服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行几个设置"><span class="nav-number">2.2.</span> <span class="nav-text">执行几个设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-number">2.3.</span> <span class="nav-text">登录</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-键位"><span class="nav-number">1.</span> <span class="nav-text">Vim 键位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一般模式"><span class="nav-number">1.1.</span> <span class="nav-text">一般模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移动光标"><span class="nav-number">1.1.1.</span> <span class="nav-text">移动光标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搜索替换"><span class="nav-number">1.1.2.</span> <span class="nav-text">搜索替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除、复制与粘贴"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除、复制与粘贴</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">1.1.4.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般模式-gt-编辑模式"><span class="nav-number">1.2.</span> <span class="nav-text">一般模式 -&gt; 编辑模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进入输入或取代的编辑模式"><span class="nav-number">1.2.1.</span> <span class="nav-text">进入输入或取代的编辑模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般模式-gt-命令模式"><span class="nav-number">1.3.</span> <span class="nav-text">一般模式 -&gt; 命令模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#指令行的储存、离开等指令"><span class="nav-number">1.3.1.</span> <span class="nav-text">指令行的储存、离开等指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-环境的变更"><span class="nav-number">1.3.2.</span> <span class="nav-text">vim 环境的变更</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
