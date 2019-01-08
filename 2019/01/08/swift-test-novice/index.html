@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="20 questions in total.">
+<meta name="keywords" content="swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HACKING WITH SWIFT Novice Test">
+<meta property="og:url" content="https://icedrip.github.io/2019/01/08/swift-test-novice/index.html">
+<meta property="og:site_name" content="Zhaoyu&#39;s Blog">
+<meta property="og:description" content="20 questions in total.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-08T10:09:06.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HACKING WITH SWIFT Novice Test">
+<meta name="twitter:description" content="20 questions in total.">
+
+
+
+
+
+
+  <link rel="canonical" href="https://icedrip.github.io/2019/01/08/swift-test-novice/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HACKING WITH SWIFT Novice Test | Zhaoyu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhaoyu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">彼岸织锦，此端弄笛</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2019/01/08/swift-test-novice/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaoyu Zhong">
+      <meta itemprop="description" content="An hour of focused attention may be worth more than days of partial attention.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaoyu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HACKING WITH SWIFT Novice Test
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-08 18:09:06" itemprop="dateCreated datePublished" datetime="2019-01-08T18:09:06+08:00">2019-01-08</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>20 questions in total.</p>
+<a id="more"></a>
+<h3 id="Qusetion-1-20"><a href="#Qusetion-1-20" class="headerlink" title="Qusetion 1/20"></a>Qusetion 1/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bark</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Woof!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Corgi</span> : <span class="title">Dog</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">bark</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Yip!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> muttface = <span class="type">Corgi</span>()</span><br><span class="line">muttface.bark()</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “Woof!”</li>
+<li style="list-style: none"><input type="checkbox"> “Woof!”, “Yip!”</li>
+<li style="list-style: none"><input type="checkbox"> “Yip!”</li>
+<li style="list-style: none"><input type="checkbox"> “Yip!”, “Woof!”</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: This code attempts to create a new class, <code>Corgi</code>, that inherits from an existing class, <code>Dog</code>. Ordinarily that would be fine, but here the Dog class has been marked as <code>final</code>, which means it cannot be inherited from.</p>
+</blockquote>
+<h3 id="Qusetion-2-20"><a href="#Qusetion-2-20" class="headerlink" title="Qusetion 2/20"></a>Qusetion 2/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Spaceship</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">willSet</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"I'm called \(newValue)!"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> serenity = <span class="type">Spaceship</span>(name: <span class="string">"Serenity"</span>)</span><br><span class="line">serenity.name = <span class="string">"TARDIS"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “I’m called Serenity!”</li>
+<li style="list-style: none"><input type="checkbox"> “I’m called Serenity!”, “I’m called TARDIS!”</li>
+<li style="list-style: none"><input type="checkbox"> “I’m called TARDIS!”</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “I’m called TARDIS!”</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>willSet</code> property observer is triggered only when the initial value is changed, and not when the struct is created using memberwise initialization.</p>
+</blockquote>
+<h3 id="Question-3-20"><a href="#Question-3-20" class="headerlink" title="Question 3/20"></a>Question 3/20</h3><p> Given the code below, what data type does <code>i</code> have?</p>
+ <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">10.2</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> Decimal</li>
+<li style="list-style: none"><input type="checkbox"> Double</li>
+<li style="list-style: none"><input type="checkbox"> Float</li>
+<li style="list-style: none"><input type="checkbox"> Int</li>
+<li style="list-style: none"><input type="checkbox"> Single</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+</ul>
+<blockquote>
+<p>Correct answer: Double</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: When given a floating-point number, Swift’s type inference will use the <code>Double</code> data type.</p>
+</blockquote>
+<h3 id="Question-4-20"><a href="#Question-4-20" class="headerlink" title="Question 4/20"></a>Question 4/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Chris"</span>, <span class="string">"Joe"</span>, <span class="string">"Doug"</span>, <span class="string">"Jordan"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> name = names[<span class="number">1</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Brought to you by \(name)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “Brought to you by Chris”</li>
+<li style="list-style: none"><input type="checkbox"> “Brought to you by Joe”</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Subscripting an array of strings will return a <code>String</code> rather than a <code>String?</code>, which means it is a compile error to attempt to unwrap it using <code>if let</code>.</p>
+</blockquote>
+<h3 id="Question-5-20"><a href="#Question-5-20" class="headerlink" title="Question 5/20"></a>Question 5/20</h3><p>When this code finishes executing, how many strings will the <code>names</code> array contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="type">String</span>]()</span><br><span class="line">names.append(<span class="string">"Amy"</span>)</span><br><span class="line">names.append(<span class="string">"Clara"</span>)</span><br><span class="line">names.append(<span class="string">"Rory"</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 0</li>
+<li style="list-style: none"><input type="checkbox"> 1</li>
+<li style="list-style: none"><input type="checkbox"> 2</li>
+<li style="list-style: none"><input type="checkbox"> 3</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>names</code> array was declared using <code>let</code>, which makes it a constant. This means it is a compile error to try to use <code>append()</code> to add strings to it.</p>
+</blockquote>
+<h3 id="Question-6-20"><a href="#Question-6-20" class="headerlink" title="Question 6/20"></a>Question 6/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">let</span> number = <span class="number">16.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(number) squared is \(number * number), and its square root is \(sqrt(number))"</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “16 squared is 16 * 16, and its square root is sqrt(16)”</li>
+<li style="list-style: none"><input type="checkbox"> “16 squared is 256, and its square root is 4”</li>
+<li style="list-style: none"><input type="checkbox"> “16.0 squared is 256.0, and its square root is 4.0”</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “16.0 squared is 256.0, and its square root is 4.0”</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Using its type inference, Swift will consider <code>number</code> to be an <code>Double</code>, which will be interpolated correctly into the string even when <code>sqrt()</code> is called. When <code>Doubles</code> are interpolated into strings, they have .0 appended to their values when they have no fractional digits.</p>
+</blockquote>
+<h3 id="Question-7-20"><a href="#Question-7-20" class="headerlink" title="Question 7/20"></a>Question 7/20</h3><p>When this code is executed, what is the value of the swift <code>string</code>?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">let</span> ns = <span class="type">NSString</span>(<span class="string">"Hello"</span>)</span><br><span class="line"><span class="keyword">let</span> swift = <span class="type">String</span>(ns)</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “”</li>
+<li style="list-style: none"><input type="checkbox"> “Hello”</li>
+<li style="list-style: none"><input type="checkbox"> nil</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: While it is possible to typecast an <code>NSString</code> into a <code>String</code> using an initializer without a label, it is not possible the other way around. The code should read <code>let ns = NSString(string: &quot;Hello&quot;)</code>.</p>
+</blockquote>
+<h3 id="Question-8-20"><a href="#Question-8-20" class="headerlink" title="Question 8/20"></a>Question 8/20</h3><p>When this code is executed, what will the <code>third</code> constant contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> first = [<span class="string">"Sulaco"</span>, <span class="string">"Nostromo"</span>]</span><br><span class="line"><span class="keyword">let</span> second = [<span class="string">"X-Wing"</span>, <span class="string">"TIE Fighter"</span>]</span><br><span class="line"><span class="keyword">let</span> third = first + second</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “Sulaco”, “Nostromo”</li>
+<li style="list-style: none"><input type="checkbox"> “Sulaco”, “Nostromo”, “Sulaco”, “Nostromo”</li>
+<li style="list-style: none"><input type="checkbox"> “Sulaco”, “Nostromo”, “X-Wing”, “TIE Fighter”</li>
+<li style="list-style: none"><input type="checkbox"> “X-Wing”, “TIE Fighter”, “Sulaco”, “Nostromo”</li>
+<li style="list-style: none"><input type="checkbox"> It will be an empty array</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Sulaco”, “Nostromo”, “X-Wing”, “TIE Fighter”</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Swift arrays can be joined together using the <code>+</code> operator, which adds the right-hand array to the end of the left-hand.</p>
+</blockquote>
+<h3 id="Question-9-20"><a href="#Question-9-20" class="headerlink" title="Question 9/20"></a>Question 9/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Serenity"</span>, <span class="string">"Sulaco"</span>, <span class="string">"Enterprise"</span>, <span class="string">"Galactica"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names <span class="keyword">where</span> name.hasPrefix(<span class="string">"S"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “Serenity”</li>
+<li style="list-style: none"><input type="checkbox"> “Serenity”, “Sulaco”</li>
+<li style="list-style: none"><input type="checkbox"> “Serenity”, “Sulaco”, “Enterprise”</li>
+<li style="list-style: none"><input type="checkbox"> “Sulaco”</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Serenity”, “Sulaco”</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>where</code> condition for the loop will ensure that only names that start with the letter S will used inside the loop.</p>
+</blockquote>
+<h3 id="Question-10-20"><a href="#Question-10-20" class="headerlink" title="Question 10/20"></a>Question 10/20</h3><p>Once this code is executed, how many items will <code>numbers</code> contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">numbers += [<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 1</li>
+<li style="list-style: none"><input type="checkbox"> 2</li>
+<li style="list-style: none"><input type="checkbox"> 3</li>
+<li style="list-style: none"><input type="checkbox"> 4</li>
+<li style="list-style: none"><input type="checkbox"> It will be empty</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: 4</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>+=</code> operator, when applied to array, serves to append one array to another in place. In this case, it appends an array containing one item (4) to the existing array of three items.</p>
+</blockquote>
+<h3 id="Question-11-20"><a href="#Question-11-20" class="headerlink" title="Question 11/20"></a>Question 11/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">3</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 1, 2</li>
+<li style="list-style: none"><input type="checkbox"> 1, 2, 3</li>
+<li style="list-style: none"><input type="checkbox"> 2</li>
+<li style="list-style: none"><input type="checkbox"> 2, 3</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: 1, 2, 3</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: This uses the closed range operator (…) to loop from 1 to 3 inclusive.</p>
+</blockquote>
+<h3 id="Question-12-20"><a href="#Question-12-20" class="headerlink" title="Question 12/20"></a>Question 12/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Serenity"</span>, <span class="string">"Sulaco"</span>, <span class="string">"Enterprise"</span>, <span class="string">"Galactica"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> last = names.last &#123;</span><br><span class="line">    <span class="built_in">print</span>(last)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “Galactica”</li>
+<li style="list-style: none"><input type="checkbox"> “Serenity”</li>
+<li style="list-style: none"><input type="checkbox"> Optional(“Galatica”)</li>
+<li style="list-style: none"><input type="checkbox"> Optional(“Serenity”)</li>
+<li style="list-style: none"><input type="checkbox"> nil</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Galactica”</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Using <code>names.last</code> will return an optional string, but the <code>if let</code> unwraps that safely to produce “Galactica”.</p>
+</blockquote>
+<h3 id="Question-13-20"><a href="#Question-13-20" class="headerlink" title="Question 13/20"></a>Question 13/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    i *= <span class="number">2</span></span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">128</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 2, 4, 8, 16, 32, 64</li>
+<li style="list-style: none"><input type="checkbox"> 2, 4, 8, 16, 32, 64, 128</li>
+<li style="list-style: none"><input type="checkbox"> 4, 8, 16, 32, 64</li>
+<li style="list-style: none"><input type="checkbox"> 4, 8, 16, 32, 64, 128</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>do</code> keyword is invalid here; the programmer should use <code>repeat</code> instead.</p>
+</blockquote>
+<h3 id="Question-14-20"><a href="#Question-14-20" class="headerlink" title="Question 14/20"></a>Question 14/20</h3><p>When this code is executed, what value will <code>num</code> have?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="type">UInt</span>.<span class="built_in">min</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> -16,777,216</li>
+<li style="list-style: none"><input type="checkbox"> -255</li>
+<li style="list-style: none"><input type="checkbox"> 0</li>
+<li style="list-style: none"><input type="checkbox"> 16,777,216</li>
+<li style="list-style: none"><input type="checkbox"> 255</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: 0</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: <code>UInt</code> means “unsigned integer”, which is a whole number that cannot be less than zero.</p>
+</blockquote>
+<h3 id="Question-15-20"><a href="#Question-15-20" class="headerlink" title="Question 15/20"></a>Question 15/20</h3><p>How many bits are used to store an <code>Int</code>?</p>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 16-bit</li>
+<li style="list-style: none"><input type="checkbox"> 32-bit</li>
+<li style="list-style: none"><input type="checkbox"> 64-bit</li>
+<li style="list-style: none"><input type="checkbox"> It depends on the device</li>
+</ul>
+<blockquote>
+<p>Correct answer: It depends on the device</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Swift’s integers are 32-bit on 32-bit devices such as iPhone 5 and earlier, and 64-bit on 64-bit devices such as iPhone 5s and later.</p>
+</blockquote>
+<h3 id="Question-16-20"><a href="#Question-16-20" class="headerlink" title="Question 16/20"></a>Question 16/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">3</span>...<span class="number">1</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 1, 2</li>
+<li style="list-style: none"><input type="checkbox"> 1, 2, 3</li>
+<li style="list-style: none"><input type="checkbox"> 2</li>
+<li style="list-style: none"><input type="checkbox"> 3, 2</li>
+<li style="list-style: none"><input type="checkbox"> 3, 2, 1</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will compile but crash</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: This code will be compiled successfully, but crash at runtime: Swift does not allow you to generate ranges where the initial value is greater than the end value.</p>
+</blockquote>
+<h3 id="Question-17-20"><a href="#Question-17-20" class="headerlink" title="Question 17/20"></a>Question 17/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oneMillion = <span class="number">1_000_000</span></span><br><span class="line"><span class="keyword">let</span> oneThousand = oneMillion / <span class="number">0_1_0_0_0</span></span><br><span class="line"><span class="built_in">print</span>(oneThousand)</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 1000</li>
+<li style="list-style: none"><input type="checkbox"> 1000000</li>
+<li style="list-style: none"><input type="checkbox"> 1_000_000</li>
+<li style="list-style: none"><input type="checkbox"> 1_0_0_0</li>
+<li style="list-style: none"><input type="checkbox"> 1_0_0_0_0_0_0</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: 1000</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Swift allows you to use any number of leading zeroes before a number, and any number of underscores inside a number, in order to make reading easier. The example given, <code>0_1_0_0_0</code>, is unlikely, but a perfectly valid way to write 1000.</p>
+</blockquote>
+<h3 id="Question-18-20"><a href="#Question-18-20" class="headerlink" title="Question 18/20"></a>Question 18/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Starship</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tardis = <span class="type">Starship</span>(name: <span class="string">"TARDIS"</span>)</span><br><span class="line"><span class="keyword">var</span> enterprise = tardis</span><br><span class="line">enterprise.name = <span class="string">"Enterprise"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tardis.name)</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “”</li>
+<li style="list-style: none"><input type="checkbox"> “Enterprise”</li>
+<li style="list-style: none"><input type="checkbox"> “TARDIS”</li>
+<li style="list-style: none"><input type="checkbox"> nil</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “TARDIS”</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Although <code>enterprise</code> was created as a copy of <code>tardis</code>, it is a struct and therefore a value type: changing <code>enterprise</code> will not also change <code>tardis</code>.</p>
+</blockquote>
+<h3 id="Question-19-20"><a href="#Question-19-20" class="headerlink" title="Question 19/20"></a>Question 19/20</h3><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Amy"</span>, <span class="string">"Rory"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names &#123;</span><br><span class="line">    name = name.uppercased()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"HELLO, \(name)!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “HELLO, AMY!”</li>
+<li style="list-style: none"><input type="checkbox"> “HELLO, AMY!”, “HELLO, RORY!”</li>
+<li style="list-style: none"><input type="checkbox"> “HELLO, RORY!”</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: This code will not compile because it modifies <code>name</code> inside the loop. If you want to do this, you must use the <code>var</code> keyword like this: <code>for var name in names</code>.</p>
+</blockquote>
+<h3 id="Question-20-20"><a href="#Question-20-20" class="headerlink" title="Question 20/20"></a>Question 20/20</h3><p>You are using a method named <code>willThrowAnError()</code>, and it is marked using <code>throws</code> because it will always throw the error “Forbidden”. Given this context, what output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> willThrowAnError()</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The error message was: \(error)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li style="list-style: none"><input type="checkbox"> “The error message was: Forbidden”</li>
+<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
+<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “The error message was: Forbidden”</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: When in a <code>catch</code> block with no pattern, Swift automatically matches any error and binds it to a local constant called <code>error</code>.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/swift/" rel="tag"># swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/07/vim-manual/" rel="next" title="Vim 使用手册">
+                <i class="fa fa-chevron-left"></i> Vim 使用手册
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhaoyu Zhong</p>
+              <p class="site-description motion-element" itemprop="description">An hour of focused attention may be worth more than days of partial attention.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Qusetion-1-20"><span class="nav-number">1.</span> <span class="nav-text">Qusetion 1/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Qusetion-2-20"><span class="nav-number">2.</span> <span class="nav-text">Qusetion 2/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-3-20"><span class="nav-number">3.</span> <span class="nav-text">Question 3/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-4-20"><span class="nav-number">4.</span> <span class="nav-text">Question 4/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-5-20"><span class="nav-number">5.</span> <span class="nav-text">Question 5/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-6-20"><span class="nav-number">6.</span> <span class="nav-text">Question 6/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-7-20"><span class="nav-number">7.</span> <span class="nav-text">Question 7/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-8-20"><span class="nav-number">8.</span> <span class="nav-text">Question 8/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-9-20"><span class="nav-number">9.</span> <span class="nav-text">Question 9/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-10-20"><span class="nav-number">10.</span> <span class="nav-text">Question 10/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-11-20"><span class="nav-number">11.</span> <span class="nav-text">Question 11/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-12-20"><span class="nav-number">12.</span> <span class="nav-text">Question 12/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-13-20"><span class="nav-number">13.</span> <span class="nav-text">Question 13/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-14-20"><span class="nav-number">14.</span> <span class="nav-text">Question 14/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-15-20"><span class="nav-number">15.</span> <span class="nav-text">Question 15/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-16-20"><span class="nav-number">16.</span> <span class="nav-text">Question 16/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-17-20"><span class="nav-number">17.</span> <span class="nav-text">Question 17/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-18-20"><span class="nav-number">18.</span> <span class="nav-text">Question 18/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-19-20"><span class="nav-number">19.</span> <span class="nav-text">Question 19/20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-20-20"><span class="nav-number">20.</span> <span class="nav-text">Question 20/20</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhaoyu Zhong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
