@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Zhaoyu&#39;s Blog">
 <meta property="og:description" content="20 questions in total.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-08T10:09:06.403Z">
+<meta property="og:updated_time" content="2019-01-10T17:02:41.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HACKING WITH SWIFT Novice Test">
 <meta name="twitter:description" content="20 questions in total.">
@@ -368,6 +368,22 @@
             
 
             
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-11 01:02:41" itemprop="dateModified" datetime="2019-01-11T01:02:41+08:00">2019-01-11</time>
+              
+            
           </span>
 
           
@@ -403,13 +419,13 @@
 <h3 id="Qusetion-1-20"><a href="#Qusetion-1-20" class="headerlink" title="Qusetion 1/20"></a>Qusetion 1/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">bark</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Woof!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Corgi</span> : <span class="title">Dog</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">bark</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Yip!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> muttface = <span class="type">Corgi</span>()</span><br><span class="line">muttface.bark()</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “Woof!”</li>
-<li style="list-style: none"><input type="checkbox"> “Woof!”, “Yip!”</li>
-<li style="list-style: none"><input type="checkbox"> “Yip!”</li>
-<li style="list-style: none"><input type="checkbox"> “Yip!”, “Woof!”</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“Woof!”</li>
+<li>“Woof!”, “Yip!”</li>
+<li>“Yip!”</li>
+<li>“Yip!”, “Woof!”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: This code will not compile</p>
@@ -420,12 +436,12 @@
 <h3 id="Qusetion-2-20"><a href="#Qusetion-2-20" class="headerlink" title="Qusetion 2/20"></a>Qusetion 2/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Spaceship</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">willSet</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"I'm called \(newValue)!"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> serenity = <span class="type">Spaceship</span>(name: <span class="string">"Serenity"</span>)</span><br><span class="line">serenity.name = <span class="string">"TARDIS"</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “I’m called Serenity!”</li>
-<li style="list-style: none"><input type="checkbox"> “I’m called Serenity!”, “I’m called TARDIS!”</li>
-<li style="list-style: none"><input type="checkbox"> “I’m called TARDIS!”</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“I’m called Serenity!”</li>
+<li>“I’m called Serenity!”, “I’m called TARDIS!”</li>
+<li>“I’m called TARDIS!”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: “I’m called TARDIS!”</p>
@@ -436,12 +452,12 @@
 <h3 id="Question-3-20"><a href="#Question-3-20" class="headerlink" title="Question 3/20"></a>Question 3/20</h3><p> Given the code below, what data type does <code>i</code> have?</p>
  <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">10.2</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> Decimal</li>
-<li style="list-style: none"><input type="checkbox"> Double</li>
-<li style="list-style: none"><input type="checkbox"> Float</li>
-<li style="list-style: none"><input type="checkbox"> Int</li>
-<li style="list-style: none"><input type="checkbox"> Single</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
+<li>Decimal</li>
+<li>Double</li>
+<li>Float</li>
+<li>Int</li>
+<li>Single</li>
+<li>This code will compile but crash</li>
 </ul>
 <blockquote>
 <p>Correct answer: Double</p>
@@ -452,10 +468,10 @@
 <h3 id="Question-4-20"><a href="#Question-4-20" class="headerlink" title="Question 4/20"></a>Question 4/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Chris"</span>, <span class="string">"Joe"</span>, <span class="string">"Doug"</span>, <span class="string">"Jordan"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> name = names[<span class="number">1</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Brought to you by \(name)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “Brought to you by Chris”</li>
-<li style="list-style: none"><input type="checkbox"> “Brought to you by Joe”</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“Brought to you by Chris”</li>
+<li>“Brought to you by Joe”</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: This code will not compile</p>
@@ -466,12 +482,12 @@
 <h3 id="Question-5-20"><a href="#Question-5-20" class="headerlink" title="Question 5/20"></a>Question 5/20</h3><p>When this code finishes executing, how many strings will the <code>names</code> array contain?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="type">String</span>]()</span><br><span class="line">names.append(<span class="string">"Amy"</span>)</span><br><span class="line">names.append(<span class="string">"Clara"</span>)</span><br><span class="line">names.append(<span class="string">"Rory"</span>)</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 0</li>
-<li style="list-style: none"><input type="checkbox"> 1</li>
-<li style="list-style: none"><input type="checkbox"> 2</li>
-<li style="list-style: none"><input type="checkbox"> 3</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>0</li>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: This code will not compile</p>
@@ -482,11 +498,11 @@
 <h3 id="Question-6-20"><a href="#Question-6-20" class="headerlink" title="Question 6/20"></a>Question 6/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">let</span> number = <span class="number">16.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(number) squared is \(number * number), and its square root is \(sqrt(number))"</span>)</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “16 squared is 16 * 16, and its square root is sqrt(16)”</li>
-<li style="list-style: none"><input type="checkbox"> “16 squared is 256, and its square root is 4”</li>
-<li style="list-style: none"><input type="checkbox"> “16.0 squared is 256.0, and its square root is 4.0”</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“16 squared is 16 * 16, and its square root is sqrt(16)”</li>
+<li>“16 squared is 256, and its square root is 4”</li>
+<li>“16.0 squared is 256.0, and its square root is 4.0”</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: “16.0 squared is 256.0, and its square root is 4.0”</p>
@@ -497,11 +513,11 @@
 <h3 id="Question-7-20"><a href="#Question-7-20" class="headerlink" title="Question 7/20"></a>Question 7/20</h3><p>When this code is executed, what is the value of the swift <code>string</code>?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">let</span> ns = <span class="type">NSString</span>(<span class="string">"Hello"</span>)</span><br><span class="line"><span class="keyword">let</span> swift = <span class="type">String</span>(ns)</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “”</li>
-<li style="list-style: none"><input type="checkbox"> “Hello”</li>
-<li style="list-style: none"><input type="checkbox"> nil</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“”</li>
+<li>“Hello”</li>
+<li>nil</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: This code will not compile</p>
@@ -512,13 +528,13 @@
 <h3 id="Question-8-20"><a href="#Question-8-20" class="headerlink" title="Question 8/20"></a>Question 8/20</h3><p>When this code is executed, what will the <code>third</code> constant contain?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> first = [<span class="string">"Sulaco"</span>, <span class="string">"Nostromo"</span>]</span><br><span class="line"><span class="keyword">let</span> second = [<span class="string">"X-Wing"</span>, <span class="string">"TIE Fighter"</span>]</span><br><span class="line"><span class="keyword">let</span> third = first + second</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “Sulaco”, “Nostromo”</li>
-<li style="list-style: none"><input type="checkbox"> “Sulaco”, “Nostromo”, “Sulaco”, “Nostromo”</li>
-<li style="list-style: none"><input type="checkbox"> “Sulaco”, “Nostromo”, “X-Wing”, “TIE Fighter”</li>
-<li style="list-style: none"><input type="checkbox"> “X-Wing”, “TIE Fighter”, “Sulaco”, “Nostromo”</li>
-<li style="list-style: none"><input type="checkbox"> It will be an empty array</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“Sulaco”, “Nostromo”</li>
+<li>“Sulaco”, “Nostromo”, “Sulaco”, “Nostromo”</li>
+<li>“Sulaco”, “Nostromo”, “X-Wing”, “TIE Fighter”</li>
+<li>“X-Wing”, “TIE Fighter”, “Sulaco”, “Nostromo”</li>
+<li>It will be an empty array</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: “Sulaco”, “Nostromo”, “X-Wing”, “TIE Fighter”</p>
@@ -529,13 +545,13 @@
 <h3 id="Question-9-20"><a href="#Question-9-20" class="headerlink" title="Question 9/20"></a>Question 9/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Serenity"</span>, <span class="string">"Sulaco"</span>, <span class="string">"Enterprise"</span>, <span class="string">"Galactica"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names <span class="keyword">where</span> name.hasPrefix(<span class="string">"S"</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “Serenity”</li>
-<li style="list-style: none"><input type="checkbox"> “Serenity”, “Sulaco”</li>
-<li style="list-style: none"><input type="checkbox"> “Serenity”, “Sulaco”, “Enterprise”</li>
-<li style="list-style: none"><input type="checkbox"> “Sulaco”</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“Serenity”</li>
+<li>“Serenity”, “Sulaco”</li>
+<li>“Serenity”, “Sulaco”, “Enterprise”</li>
+<li>“Sulaco”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: “Serenity”, “Sulaco”</p>
@@ -546,13 +562,13 @@
 <h3 id="Question-10-20"><a href="#Question-10-20" class="headerlink" title="Question 10/20"></a>Question 10/20</h3><p>Once this code is executed, how many items will <code>numbers</code> contain?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">numbers += [<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 1</li>
-<li style="list-style: none"><input type="checkbox"> 2</li>
-<li style="list-style: none"><input type="checkbox"> 3</li>
-<li style="list-style: none"><input type="checkbox"> 4</li>
-<li style="list-style: none"><input type="checkbox"> It will be empty</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>It will be empty</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: 4</p>
@@ -563,13 +579,13 @@
 <h3 id="Question-11-20"><a href="#Question-11-20" class="headerlink" title="Question 11/20"></a>Question 11/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">3</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 1, 2</li>
-<li style="list-style: none"><input type="checkbox"> 1, 2, 3</li>
-<li style="list-style: none"><input type="checkbox"> 2</li>
-<li style="list-style: none"><input type="checkbox"> 2, 3</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>1, 2</li>
+<li>1, 2, 3</li>
+<li>2</li>
+<li>2, 3</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: 1, 2, 3</p>
@@ -580,14 +596,14 @@
 <h3 id="Question-12-20"><a href="#Question-12-20" class="headerlink" title="Question 12/20"></a>Question 12/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Serenity"</span>, <span class="string">"Sulaco"</span>, <span class="string">"Enterprise"</span>, <span class="string">"Galactica"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> last = names.last &#123;</span><br><span class="line">    <span class="built_in">print</span>(last)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “Galactica”</li>
-<li style="list-style: none"><input type="checkbox"> “Serenity”</li>
-<li style="list-style: none"><input type="checkbox"> Optional(“Galatica”)</li>
-<li style="list-style: none"><input type="checkbox"> Optional(“Serenity”)</li>
-<li style="list-style: none"><input type="checkbox"> nil</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“Galactica”</li>
+<li>“Serenity”</li>
+<li>Optional(“Galatica”)</li>
+<li>Optional(“Serenity”)</li>
+<li>nil</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: “Galactica”</p>
@@ -598,12 +614,12 @@
 <h3 id="Question-13-20"><a href="#Question-13-20" class="headerlink" title="Question 13/20"></a>Question 13/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    i *= <span class="number">2</span></span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">128</span>)</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 2, 4, 8, 16, 32, 64</li>
-<li style="list-style: none"><input type="checkbox"> 2, 4, 8, 16, 32, 64, 128</li>
-<li style="list-style: none"><input type="checkbox"> 4, 8, 16, 32, 64</li>
-<li style="list-style: none"><input type="checkbox"> 4, 8, 16, 32, 64, 128</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>2, 4, 8, 16, 32, 64</li>
+<li>2, 4, 8, 16, 32, 64, 128</li>
+<li>4, 8, 16, 32, 64</li>
+<li>4, 8, 16, 32, 64, 128</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: This code will not compile</p>
@@ -614,13 +630,13 @@
 <h3 id="Question-14-20"><a href="#Question-14-20" class="headerlink" title="Question 14/20"></a>Question 14/20</h3><p>When this code is executed, what value will <code>num</code> have?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="type">UInt</span>.<span class="built_in">min</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> -16,777,216</li>
-<li style="list-style: none"><input type="checkbox"> -255</li>
-<li style="list-style: none"><input type="checkbox"> 0</li>
-<li style="list-style: none"><input type="checkbox"> 16,777,216</li>
-<li style="list-style: none"><input type="checkbox"> 255</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>-16,777,216</li>
+<li>-255</li>
+<li>0</li>
+<li>16,777,216</li>
+<li>255</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: 0</p>
@@ -630,10 +646,10 @@
 </blockquote>
 <h3 id="Question-15-20"><a href="#Question-15-20" class="headerlink" title="Question 15/20"></a>Question 15/20</h3><p>How many bits are used to store an <code>Int</code>?</p>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 16-bit</li>
-<li style="list-style: none"><input type="checkbox"> 32-bit</li>
-<li style="list-style: none"><input type="checkbox"> 64-bit</li>
-<li style="list-style: none"><input type="checkbox"> It depends on the device</li>
+<li>16-bit</li>
+<li>32-bit</li>
+<li>64-bit</li>
+<li>It depends on the device</li>
 </ul>
 <blockquote>
 <p>Correct answer: It depends on the device</p>
@@ -644,14 +660,14 @@
 <h3 id="Question-16-20"><a href="#Question-16-20" class="headerlink" title="Question 16/20"></a>Question 16/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">3</span>...<span class="number">1</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 1, 2</li>
-<li style="list-style: none"><input type="checkbox"> 1, 2, 3</li>
-<li style="list-style: none"><input type="checkbox"> 2</li>
-<li style="list-style: none"><input type="checkbox"> 3, 2</li>
-<li style="list-style: none"><input type="checkbox"> 3, 2, 1</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>1, 2</li>
+<li>1, 2, 3</li>
+<li>2</li>
+<li>3, 2</li>
+<li>3, 2, 1</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: This code will compile but crash</p>
@@ -662,14 +678,14 @@
 <h3 id="Question-17-20"><a href="#Question-17-20" class="headerlink" title="Question 17/20"></a>Question 17/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oneMillion = <span class="number">1_000_000</span></span><br><span class="line"><span class="keyword">let</span> oneThousand = oneMillion / <span class="number">0_1_0_0_0</span></span><br><span class="line"><span class="built_in">print</span>(oneThousand)</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 1000</li>
-<li style="list-style: none"><input type="checkbox"> 1000000</li>
-<li style="list-style: none"><input type="checkbox"> 1_000_000</li>
-<li style="list-style: none"><input type="checkbox"> 1_0_0_0</li>
-<li style="list-style: none"><input type="checkbox"> 1_0_0_0_0_0_0</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>1000</li>
+<li>1000000</li>
+<li>1_000_000</li>
+<li>1_0_0_0</li>
+<li>1_0_0_0_0_0_0</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: 1000</p>
@@ -680,13 +696,13 @@
 <h3 id="Question-18-20"><a href="#Question-18-20" class="headerlink" title="Question 18/20"></a>Question 18/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Starship</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tardis = <span class="type">Starship</span>(name: <span class="string">"TARDIS"</span>)</span><br><span class="line"><span class="keyword">var</span> enterprise = tardis</span><br><span class="line">enterprise.name = <span class="string">"Enterprise"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tardis.name)</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “”</li>
-<li style="list-style: none"><input type="checkbox"> “Enterprise”</li>
-<li style="list-style: none"><input type="checkbox"> “TARDIS”</li>
-<li style="list-style: none"><input type="checkbox"> nil</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“”</li>
+<li>“Enterprise”</li>
+<li>“TARDIS”</li>
+<li>nil</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: “TARDIS”</p>
@@ -697,12 +713,12 @@
 <h3 id="Question-19-20"><a href="#Question-19-20" class="headerlink" title="Question 19/20"></a>Question 19/20</h3><p>What output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Amy"</span>, <span class="string">"Rory"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names &#123;</span><br><span class="line">    name = name.uppercased()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"HELLO, \(name)!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “HELLO, AMY!”</li>
-<li style="list-style: none"><input type="checkbox"> “HELLO, AMY!”, “HELLO, RORY!”</li>
-<li style="list-style: none"><input type="checkbox"> “HELLO, RORY!”</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“HELLO, AMY!”</li>
+<li>“HELLO, AMY!”, “HELLO, RORY!”</li>
+<li>“HELLO, RORY!”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: This code will not compile</p>
@@ -713,10 +729,10 @@
 <h3 id="Question-20-20"><a href="#Question-20-20" class="headerlink" title="Question 20/20"></a>Question 20/20</h3><p>You are using a method named <code>willThrowAnError()</code>, and it is marked using <code>throws</code> because it will always throw the error “Forbidden”. Given this context, what output will be produced by the code below?</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> willThrowAnError()</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"The error message was: \(error)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li style="list-style: none"><input type="checkbox"> “The error message was: Forbidden”</li>
-<li style="list-style: none"><input type="checkbox"> Nothing will be output</li>
-<li style="list-style: none"><input type="checkbox"> This code will compile but crash</li>
-<li style="list-style: none"><input type="checkbox"> This code will not compile</li>
+<li>“The error message was: Forbidden”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
 </ul>
 <blockquote>
 <p>Correct answer: “The error message was: Forbidden”</p>
