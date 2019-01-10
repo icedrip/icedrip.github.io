@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="20 questions in total.">
+<meta name="keywords" content="swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HACKING WITH SWIFT Intermediate Test">
+<meta property="og:url" content="https://icedrip.github.io/2019/01/10/swift-test-intermediate/index.html">
+<meta property="og:site_name" content="Zhaoyu&#39;s Blog">
+<meta property="og:description" content="20 questions in total.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-10T07:16:13.526Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HACKING WITH SWIFT Intermediate Test">
+<meta name="twitter:description" content="20 questions in total.">
+
+
+
+
+
+
+  <link rel="canonical" href="https://icedrip.github.io/2019/01/10/swift-test-intermediate/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HACKING WITH SWIFT Intermediate Test | Zhaoyu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhaoyu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">彼岸织锦，此端弄笛</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2019/01/10/swift-test-intermediate/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaoyu Zhong">
+      <meta itemprop="description" content="An hour of focused attention may be worth more than days of partial attention.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaoyu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HACKING WITH SWIFT Intermediate Test
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-10 15:16:13" itemprop="dateCreated datePublished" datetime="2019-01-10T15:16:13+08:00">2019-01-10</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>20 questions in total.</p>
+<a id="more"></a>
+<h2 id="Question-1"><a href="#Question-1" class="headerlink" title="Question 1"></a>Question 1</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = numbers.<span class="built_in">map</span> &#123; $<span class="number">0</span> * <span class="number">10</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(numbers)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: 1, 3, 5, 7, 9.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The call to <code>map</code> will multiply each integer in the <code>numbers</code> array by 10, and assign the result to the <code>result</code> constant. However, the value that is printed is <code>numbers</code>, not <code>result</code>, so the original integers will be printed.</p>
+</blockquote>
+<h2 id="Question-2"><a href="#Question-2" class="headerlink" title="Question 2"></a>Question 2</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spaceships = <span class="type">Set</span>&lt;<span class="type">String</span>&gt;()</span><br><span class="line">spaceships.insert(<span class="string">"Serenity"</span>)</span><br><span class="line">spaceships.insert(<span class="string">"Enterprise"</span>)</span><br><span class="line">spaceships.insert(<span class="string">"TARDIS"</span>)</span><br><span class="line">spaceships.insert(<span class="string">"Serenity"</span>)</span><br><span class="line"><span class="built_in">print</span>(spaceships.<span class="built_in">count</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: 3.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Sets are similar to arrays, although each item can only appear once. If you add an item more than once, it will be silently ignored.</p>
+</blockquote>
+<h2 id="Question-3"><a href="#Question-3" class="headerlink" title="Question 3"></a>Question 3</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> point = (<span class="number">556</span>, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">switch</span> point &#123;</span><br><span class="line"><span class="keyword">case</span> (<span class="keyword">let</span> x, <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"X was \(x)"</span>)</span><br><span class="line"><span class="keyword">case</span> (<span class="number">0</span>, <span class="keyword">let</span> y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Y was \(y)"</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"X was \(x) and Y was \(y)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: X was 556.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Swift will execute the first case block that matches its switch value. In this case, <code>point</code> is a tuple with the value <code>(556, 0)</code>, so the <code>(let x, 0)</code> case will be matched and its message printed.</p>
+</blockquote>
+<h2 id="Question-4"><a href="#Question-4" class="headerlink" title="Question 4"></a>Question 4</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = <span class="type">Array</span>(<span class="number">1</span>..&lt;<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(numbers.<span class="built_in">count</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: 9.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: This array constructor creates values based on the range from 1 up to (but not including 10). This means it will include the numbers 1, 2, 3, 4, 5, 6, 7, 8, and 9, so the count will be 9.</p>
+</blockquote>
+<h2 id="Question-5"><a href="#Question-5" class="headerlink" title="Question 5"></a>Question 5</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crew = [<span class="string">"Captain"</span>: <span class="string">"Malcolm"</span>, <span class="string">"Doctor"</span>: <span class="string">"Simon"</span>]</span><br><span class="line">crew = [:]</span><br><span class="line"><span class="built_in">print</span>(crew.<span class="built_in">count</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: 0.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: <code>[:]</code> is shorthand syntax for “an empty dictionary”, which causes the <code>crew</code> dictionary to be wiped.</p>
+</blockquote>
+<h2 id="Question-6"><a href="#Question-6" class="headerlink" title="Question 6"></a>Question 6</h2><p>When this code is executed, what will the <code>numbers</code> constant contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].<span class="built_in">map</span> &#123; [$<span class="number">0</span>, $<span class="number">0</span>] &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: [[1, 1], [2, 2], [3, 3]].</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The code loops over every number in the <code>numbers</code> array, and creates a new array for each number that contains that number twice. So, <code>1</code> will be converted to [1, 1] and so on.</p>
+</blockquote>
+<h2 id="Question-7"><a href="#Question-7" class="headerlink" title="Question 7"></a>Question 7</h2><p>When this code is executed, how many items will the <code>result</code> array contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = numbers.<span class="built_in">filter</span> &#123; $<span class="number">0</span> &gt;= <span class="number">5</span> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: 3.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The call to <code>filter</code> will return items from the <code>numbers</code> array only if they are greater than or equal to 5.</p>
+</blockquote>
+<h2 id="Question-8"><a href="#Question-8" class="headerlink" title="Question 8"></a>Question 8</h2><p>When this code is executed, how many items will the <code>names</code> array contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [<span class="type">String</span>]()</span><br><span class="line">names.reserveCapacity(<span class="number">2</span>)</span><br><span class="line">names.append(<span class="string">"Amy"</span>)</span><br><span class="line">names.append(<span class="string">"Rory"</span>)</span><br><span class="line">names.append(<span class="string">"Clara"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: 3.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>reserveCapacity()</code> method is there to let you give an indication of how many elements you intend to store in an array, but it does not place any sort of limit.</p>
+</blockquote>
+<h2 id="Question-9"><a href="#Question-9" class="headerlink" title="Question 9"></a>Question 9</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">let</span> crew = <span class="type">NSMutableDictionary</span>()</span><br><span class="line">crew.setValue(<span class="string">"Kryten"</span>, forKey: <span class="string">"Mechanoid"</span>)</span><br><span class="line"><span class="built_in">print</span>(crew.<span class="built_in">count</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: 1.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Although we’ve declared the <code>NSMutableDictionary</code> to be constant, it’s a reference type and so will happily mutate itself regardless of its supposed “constant” status. So, this code will output 1 because the value was added successfully.</p>
+</blockquote>
+<h2 id="Question-10"><a href="#Question-10" class="headerlink" title="Question 10"></a>Question 10</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Simon"</span>, <span class="string">"River"</span>, <span class="string">"Book"</span>]</span><br><span class="line"></span><br><span class="line">names.forEach &#123;</span><br><span class="line">    <span class="built_in">print</span>($<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: This code will not compile.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: When using <code>forEach</code> you are given each item of an array using the value <code>$0</code>. This code incorrectly tries to use <code>$1</code>, and so will not compile.</p>
+</blockquote>
+<h2 id="Question-11"><a href="#Question-11" class="headerlink" title="Question 11"></a>Question 11</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bigNumber = <span class="type">Int</span>.<span class="built_in">max</span></span><br><span class="line"><span class="keyword">let</span> biggerNumber = bigNumber + <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(biggerNumber)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: This code will compile but crash.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Adding 1 to the largest integer will cause an integer overflow, which is an exception.</p>
+</blockquote>
+<h2 id="Question-12"><a href="#Question-12" class="headerlink" title="Question 12"></a>Question 12</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">MyError</span>: <span class="title">Error</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> broken</span><br><span class="line">    <span class="keyword">case</span> busted</span><br><span class="line">    <span class="keyword">case</span> badgered</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">willThrowAnError</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="type">MyError</span>.busted</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> willThrowAnError()</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="type">MyError</span>.busted &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Code was busted!"</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Code just didn't work"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: This code will not compile.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>willThrowAnError()</code> method throws an exception, but it is not marked using the <code>throws</code> keyword. The code should read <code>func willThrowAnError() throws</code>.</p>
+</blockquote>
+<h2 id="Question-13"><a href="#Question-13" class="headerlink" title="Question 13"></a>Question 13</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people = [<span class="type">String</span>](repeating: <span class="string">"Malkovitch"</span>, <span class="built_in">count</span>: <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(people)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: [“Malkovitch”, “Malkovitch”] (an array).</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: This array constructor automatically creates as many elements as the <code>count</code> property requests, with each one being set to the value of <code>repeating</code>.</p>
+</blockquote>
+<h2 id="Question-14"><a href="#Question-14" class="headerlink" title="Question 14"></a>Question 14</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> number = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> number &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">0</span>..&lt;<span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"First group"</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="number">5</span>...<span class="number">10</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Second group"</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="number">0</span>...<span class="number">5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Third group"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Fourth group"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: “Second group”.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Although there are overlapping ranges in this code, Swift will simply find and execute the first one that matches. The first case, <code>0..&lt;5</code>, will not be matched because it uses the half-open range operator, which excludes the upper bound.</p>
+</blockquote>
+<h2 id="Question-15"><a href="#Question-15" class="headerlink" title="Question 15"></a>Question 15</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">greet</span><span class="params">(names: String...)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Criminal masterminds:"</span>, names.joined(separator: <span class="string">", "</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(names: <span class="string">"Malcolm"</span>, <span class="string">"Kaylee"</span>, <span class="string">"Zoe"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: “Criminal masterminds: Malcolm, Kaylee, Zoe”.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>greet()</code> method is declared as accepting a variadic string parameter, which means it should be called using one or more strings that will be made accessible as an array inside the function. The <code>greet()</code> method takes that array, joins it using commas, then prints it out as part of a larger message.</p>
+</blockquote>
+<h2 id="Question-16"><a href="#Question-16" class="headerlink" title="Question 16"></a>Question 16</h2><p>When this code is executed, what value does <code>result</code> contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sum</span><span class="params">(numbers: Int...)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> numbers &#123;</span><br><span class="line">        result += number</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = sum(numbers: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: This code will not compile.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The <code>sum()</code> function is declared to take a variadic Int parameter, which means it takes zero or more integers. While the body of the function is correct, the way it is called is incorrect because the code should read <code>sum(numbers: 1, 2, 3, 4, 5)</code>.</p>
+</blockquote>
+<h2 id="Question-17"><a href="#Question-17" class="headerlink" title="Question 17"></a>Question 17</h2><p>Read the code below:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo: <span class="type">Float</span> = <span class="number">32</span></span><br><span class="line"><span class="keyword">var</span> bar: <span class="type">Double</span> = <span class="number">32</span></span><br></pre></td></tr></table></figure>
+<p>Assuming no typecasting, which of the following statements is true?</p>
+<blockquote>
+<p>Correct answer: Neither variable can be assigned to the other.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Even though a <code>Double</code> holds more data than a <code>Float</code>, Swift’s strict type safety means that you can not assign either variable to the other without typecasting.</p>
+</blockquote>
+<h2 id="Question-18"><a href="#Question-18" class="headerlink" title="Question 18"></a>Question 18</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">"Simon"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> name &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">"Simon"</span>:</span><br><span class="line">    <span class="keyword">fallthrough</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">"Malcom"</span>, <span class="string">"Zoe"</span>, <span class="string">"Kaylee"</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Crew"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Not crew"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: “Crew”.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: Swift will correctly match the first case again “Simon”, then the <code>fallthrough</code> keyword will cause control to fall into the next case block and print “Crew”.</p>
+</blockquote>
+<h2 id="Question-19"><a href="#Question-19" class="headerlink" title="Question 19"></a>Question 19</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names = [<span class="string">"Pilot"</span>: <span class="string">"Wash"</span>, <span class="string">"Doctor"</span>: <span class="string">"Simon"</span>]</span><br><span class="line"><span class="keyword">let</span> doctor = names[<span class="string">"doctor"</span>] ?? <span class="string">"Bones"</span></span><br><span class="line"><span class="built_in">print</span>(doctor)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: “Bones”.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The code accesses the “doctor” element in the <code>names</code> dictionary, which is not set: dictionaries are case-sensitive. This will cause <code>nil</code> to be returned, which then triggers the nil coalescing operator to set <code>doctor</code> to be “Bones”.</p>
+</blockquote>
+<h2 id="Question-20"><a href="#Question-20" class="headerlink" title="Question 20"></a>Question 20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">mainLoop: <span class="keyword">repeat</span> &#123;</span><br><span class="line">    i += <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> i % <span class="number">2</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span> mainLoop</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Complete!"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Correct answer: This code will compile but crash.</p>
+</blockquote>
+<blockquote>
+<p><strong>Explanation</strong>: The main <code>repeat</code> loop is set to loop forever, or at least until someone calls <code>break</code> on it. In the code, this happens only when <code>i % 2</code> is 0, i.e. when it’s an even number, which can never happen because we start with 1 and also add 2. So, even though it will take a long time, the <code>i</code> variable will eventually overflow and trigger a crash.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/swift/" rel="tag"># swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/08/swift-test-novice/" rel="next" title="HACKING WITH SWIFT Novice Test">
+                <i class="fa fa-chevron-left"></i> HACKING WITH SWIFT Novice Test
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhaoyu Zhong</p>
+              <p class="site-description motion-element" itemprop="description">An hour of focused attention may be worth more than days of partial attention.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-1"><span class="nav-number">1.</span> <span class="nav-text">Question 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-2"><span class="nav-number">2.</span> <span class="nav-text">Question 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-3"><span class="nav-number">3.</span> <span class="nav-text">Question 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-4"><span class="nav-number">4.</span> <span class="nav-text">Question 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-5"><span class="nav-number">5.</span> <span class="nav-text">Question 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-6"><span class="nav-number">6.</span> <span class="nav-text">Question 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-7"><span class="nav-number">7.</span> <span class="nav-text">Question 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-8"><span class="nav-number">8.</span> <span class="nav-text">Question 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-9"><span class="nav-number">9.</span> <span class="nav-text">Question 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-10"><span class="nav-number">10.</span> <span class="nav-text">Question 10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-11"><span class="nav-number">11.</span> <span class="nav-text">Question 11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-12"><span class="nav-number">12.</span> <span class="nav-text">Question 12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-13"><span class="nav-number">13.</span> <span class="nav-text">Question 13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-14"><span class="nav-number">14.</span> <span class="nav-text">Question 14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-15"><span class="nav-number">15.</span> <span class="nav-text">Question 15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-16"><span class="nav-number">16.</span> <span class="nav-text">Question 16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-17"><span class="nav-number">17.</span> <span class="nav-text">Question 17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-18"><span class="nav-number">18.</span> <span class="nav-text">Question 18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-19"><span class="nav-number">19.</span> <span class="nav-text">Question 19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-20"><span class="nav-number">20.</span> <span class="nav-text">Question 20</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhaoyu Zhong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
