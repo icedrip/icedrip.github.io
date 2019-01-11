@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="20 questions in total.">
+<meta name="keywords" content="swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HACKING WITH SWIFT Expert Test">
+<meta property="og:url" content="https://icedrip.github.io/2019/01/11/swift-test-expert/index.html">
+<meta property="og:site_name" content="Zhaoyu&#39;s Blog">
+<meta property="og:description" content="20 questions in total.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-11T14:39:59.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HACKING WITH SWIFT Expert Test">
+<meta name="twitter:description" content="20 questions in total.">
+
+
+
+
+
+
+  <link rel="canonical" href="https://icedrip.github.io/2019/01/11/swift-test-expert/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HACKING WITH SWIFT Expert Test | Zhaoyu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhaoyu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">彼岸织锦，此端弄笛</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2019/01/11/swift-test-expert/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaoyu Zhong">
+      <meta itemprop="description" content="An hour of focused attention may be worth more than days of partial attention.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaoyu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HACKING WITH SWIFT Expert Test
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-11 22:39:59" itemprop="dateCreated datePublished" datetime="2019-01-11T22:39:59+08:00">2019-01-11</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>20 questions in total.</p>
+<a id="more"></a>
+<h2 id="Question-1-20"><a href="#Question-1-20" class="headerlink" title="Question 1/20"></a>Question 1/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TaylorFan</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> favoriteSong = <span class="string">"Shake it Off"</span></span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fan = <span class="type">TaylorFan</span>(name: <span class="string">"James"</span>, age: <span class="number">25</span>)</span><br><span class="line"><span class="built_in">print</span>(fan.favoriteSong)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“Shake it Off”</li>
+<li>nil</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>favoriteSong</code> property has been declared <code>static</code>, which means it must be accessed using <code>TaylorFan.favoriteSong</code>.</p>
+</blockquote>
+<h2 id="Question-2-20"><a href="#Question-2-20" class="headerlink" title="Question 2/20"></a>Question 2/20</h2><p>How many lines will be printed by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> data: [<span class="type">Any</span>?] = [<span class="string">"Bill"</span>, <span class="literal">nil</span>, <span class="number">69</span>, <span class="string">"Ted"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> datum <span class="keyword">in</span> data <span class="keyword">where</span> !(datum <span class="keyword">is</span> <span class="type">Hashable</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(datum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>0</li>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>No lines will be printed</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: 1.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The loop will print only items that do not conform to the hashable protocol. In this code, the only such item is <code>nil</code>, so one line will be printed.</p>
+</blockquote>
+<h2 id="Question-3-20"><a href="#Question-3-20" class="headerlink" title="Question 3/20"></a>Question 3/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getNumber</span><span class="params">()</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Fetching number..."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printStatement</span><span class="params">(<span class="number">_</span> result: @autoclosure <span class="params">()</span></span></span> -&gt; <span class="type">Bool</span>) &#123;</span><br><span class="line">    <span class="comment">// print("Here is the number: \(result())")</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Nothing to see here."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printStatement(getNumber() == <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“Fetching number”</li>
+<li>“Fetching number…”, “Nothing to see here.”</li>
+<li>“Nothing to see here.”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Nothing to see here.”.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>@autoclosure</code> attribute automatically turns the code <code>getNumber() == 5</code> into a closure that would have been called in the “Here is the number line” had it not been commented out. Because that closure is never used, the “Fetching number…” message is never printed, leaving just “Nothing to see here.” being displayed.</p>
+</blockquote>
+<h2 id="Question-4-20"><a href="#Question-4-20" class="headerlink" title="Question 4/20"></a>Question 4/20</h2><p>Given the code below, what data type will be assigned to <code>test</code>?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Planet</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">Mercury</span> = <span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Venus</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Earth</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Mars</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> test = <span class="type">Planet</span>(rawValue: <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Int</li>
+<li>Int?</li>
+<li>Planet</li>
+<li>Planet?</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: Planet?.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: Creating an enum from its raw value might fail: we could have used <code>99</code> for the raw value, and that clearly does not exist. So, this is will return either a planet enum or <code>nil</code> if the planet was not found.</p>
+</blockquote>
+<h2 id="Question-5-20"><a href="#Question-5-20" class="headerlink" title="Question 5/20"></a>Question 5/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">square</span>&lt;T&gt;<span class="params">(<span class="number">_</span> value: T)</span></span> -&gt; <span class="type">T</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> value * value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(square(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>25</li>
+<li>5</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will not compile.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: This code has attempted to create a generic number squaring function, but has failed to declare that <code>T</code> (the data type being used) has the ability to work with the <code>*</code> operator, so Swift cannot compile it. One solution might be to modify it to <code>square&lt;T: BinaryInteger&gt;</code>, which would allow it to work on <code>Int</code>, <code>UInt</code>, <code>Int64</code> and so on.</p>
+</blockquote>
+<h2 id="Question-6-20"><a href="#Question-6-20" class="headerlink" title="Question 6/20"></a>Question 6/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">101</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">case</span> <span class="number">100</span>...<span class="number">101</span> = i &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello, world!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Goodbye, world!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“Goodbye, world!”</li>
+<li>“Hello, world!”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Hello, world!”.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: Using <code>if case</code> with a range like <code>100...101</code> allows us to check whether an integer is inside that range. In this case, it checks whether the value of <code>i</code> (101) is inside the range of numbers 100 and 101 (inclusive), which it is, so “Hello, world!” is printed.</p>
+</blockquote>
+<h2 id="Question-7-20"><a href="#Question-7-20" class="headerlink" title="Question 7/20"></a>Question 7/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> status = <span class="string">"shiny"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (position, character) <span class="keyword">in</span> status.reversed().enumerated() <span class="keyword">where</span> position % <span class="number">2</span> == <span class="number">0</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(position): \(character)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>0: s</li>
+<li>0: s, 2: i, 4: y</li>
+<li>0: y</li>
+<li>0: y, 2: i, 4: s</li>
+<li>4: s, 2: i, 0: y</li>
+<li>4: y, 2: i, 0: s</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: 0: y, 2: i, 4: s.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: There are three things to understand about this code. First, <code>reversed()</code> is called on the string before <code>enumerated()</code>, which means the string is reversed but the enumeration (the positions) are not. Second, <code>enumerated()</code> will return each character in the reversed string, along with its position. Third, that position is passed into a <code>where</code> clause, and only even-numbered character indices will be printed.</p>
+</blockquote>
+<h2 id="Question-8-20"><a href="#Question-8-20" class="headerlink" title="Question 8/20"></a>Question 8/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names: [<span class="type">String</span>?] = [<span class="string">"Barbara"</span>, <span class="literal">nil</span>, <span class="string">"Janet"</span>, <span class="literal">nil</span>, <span class="string">"Peter"</span>, <span class="literal">nil</span>, <span class="string">"George"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> firstName = names.first &#123;</span><br><span class="line">    <span class="built_in">print</span>(firstName)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“Barbara”</li>
+<li>Optional(“Barbara”)</li>
+<li>nil</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: Optional(“Barbara”).</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>names</code> array contains values of type <code>String?</code>, but <code>names.first</code> adds an extra level of optionality because it will return <code>nil</code> if there are no items in the array. So, in this code <code>names.first</code> will return <code>String??</code> (an optional optional String), of which one layer is unwrapped using the <code>if let</code>.</p>
+</blockquote>
+<h2 id="Question-9-20"><a href="#Question-9-20" class="headerlink" title="Question 9/20"></a>Question 9/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TaylorFan</span> </span>&#123;</span><br><span class="line">    <span class="keyword">fileprivate</span> <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fan = <span class="type">TaylorFan</span>(name: <span class="string">"Kailee"</span>)</span><br><span class="line">fan.name = <span class="string">"Simon"</span></span><br><span class="line"><span class="built_in">print</span>(fan.name)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“”</li>
+<li>“Kailee”</li>
+<li>“Simon”</li>
+<li>nil</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Simon”.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: Creating a property using <code>fileprivate</code> means that Swift won’t let code from other files read or write that property directly. However, Swift playgrounds are compiled into a single file when run, and code that exists in the same file as a <code>fileprivate</code> property can access it directly.</p>
+</blockquote>
+<h2 id="Question-10-20"><a href="#Question-10-20" class="headerlink" title="Question 10/20"></a>Question 10/20</h2><p>When this code is executed, what will the <code>name</code> value contain?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">11</span></span><br><span class="line"><span class="keyword">let</span> j = <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name = <span class="number">9</span>...<span class="number">11</span> ~= i ? j % <span class="number">2</span> == <span class="number">1</span> ? <span class="string">"Larry"</span> : <span class="string">"Laura"</span> : <span class="string">"Libby"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>“”</li>
+<li>“Larry”</li>
+<li>“Laura”</li>
+<li>“Libby”</li>
+<li>nil</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Laura”.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: This code uses the ternary operator (?:) and the pattern match operator (~=) to choose one of three names. First, the pattern match operator is used to decide whether the value of <code>i</code> (11) is in the range 9…11, which is just the numbers 9, 10, and 11. If the pattern match operator returns true, a second check happens: is the value of j (20) divisible by two with a remainder of one? If so, the name Larry is used; if not, Laura. And if the pattern match operator returns false, Libby is used. In this case, the pattern match succeeds but 20 divided by 2 does not leave a remainder of 1, so Laura is used for <code>name</code>.</p>
+</blockquote>
+<h2 id="Question-11-20"><a href="#Question-11-20" class="headerlink" title="Question 11/20"></a>Question 11/20</h2><p>In the code below, what is the data type used for <code>result</code>?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">doStuff</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Stuff has been done"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = doStuff()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>() (a tuple)</li>
+<li>0</li>
+<li>[] (an array)</li>
+<li>false</li>
+<li>nil</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: () (a tuple).</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>doStuff()</code> function is not declared as returning a value, so Swift will automatically consider it to return Void, which itself is a typealias for the empty tuple type, <code>()</code>.</p>
+</blockquote>
+<h2 id="Question-12-20"><a href="#Question-12-20" class="headerlink" title="Question 12/20"></a>Question 12/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> first = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> second = [<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>]</span><br><span class="line"><span class="keyword">var</span> third = <span class="type">Array</span>(<span class="built_in">zip</span>(first, second))</span><br><span class="line"><span class="built_in">print</span>(third)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>(1, “one”, 2, “two”, 3, “three”)</li>
+<li>[(1), (“one”), (2), (“two”), (3), (“three”)]</li>
+<li>[(1, “one”), (2, “two”), (3, “three”)]</li>
+<li>[1, “one”, 2, “two”, 3, “three”]</li>
+<li>[[1, “one”], [2, “two”], [3, “three”]]</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: [(1, “one”), (2, “two”), (3, “three”)].</p>
+</blockquote>
+<blockquote>
+<p>Explanation: This code creates a <code>Zip2Sequence</code> struct out of two arrays: one containing 1, 2, 3, and another containing “one”, “two”, “three”. The <code>Zip2Sequence</code> will match each item in the first array with the item at the same index in the second array, giving (1, “one”) and so on. This is then converted to an array for easier access.</p>
+</blockquote>
+<h2 id="Question-13-20"><a href="#Question-13-20" class="headerlink" title="Question 13/20"></a>Question 13/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> (captain, engineer, doctor) = (<span class="string">"Mal"</span>, <span class="string">"Kailee"</span>, <span class="string">"Simon"</span>)</span><br><span class="line"><span class="built_in">print</span>(engineer)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“Kailee”</li>
+<li>“Mal”</li>
+<li>“Simon”</li>
+<li>(“Kailee”) (a tuple)</li>
+<li>(“Mal”, “Kailee”, “Simon”) (a tuple)</li>
+<li>[“Mal”, “Kailee”, “Simon”] (an array)</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “Kailee”.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: This code demonstrates tuple destructuring, which is a method of pulling a tuple into multiple individual values in one line of code. In this example, it will create three constants (<code>captain</code>, <code>engineer</code>, and <code>doctor</code>), giving them the values “Mal”, “Kailee”, and “Simon” respectively.</p>
+</blockquote>
+<h2 id="Question-14-20"><a href="#Question-14-20" class="headerlink" title="Question 14/20"></a>Question 14/20</h2><p>Please read the code below:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">let</span> data: [<span class="type">Any</span>?] = [<span class="string">"Bill"</span>, <span class="literal">nil</span>, <span class="number">69</span>, <span class="string">"Ted"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> datum <span class="keyword">in</span> data <span class="keyword">where</span> datum <span class="keyword">is</span> <span class="type">String</span>? &#123;</span><br><span class="line">    <span class="built_in">print</span>(datum)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="keyword">case</span> <span class="keyword">let</span> .some(datum) <span class="keyword">in</span> data <span class="keyword">where</span> datum <span class="keyword">is</span> <span class="type">String</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(datum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>As you can see, there are two <code>for</code> loops, both operating on the <code>data</code> array. Which loop prints the most lines?</p>
+<ul>
+<li>Both loops print the same number of lines</li>
+<li>The first loop prints more lines than the second</li>
+<li>The second loop prints more lines than the first</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: The first loop prints more lines than the second.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: There is a very subtle difference between the two loops, and it’s triggered by the data type of the array: this is an array of <code>Any?</code> not an array of strings. The first loop will attempt to typecast its items as <code>String?</code>, which means the loop element must either be a string or nil – that’s true of three items. The second loop, however, begins by unwrapping the optional, so it will either be <code>Any</code> or <code>String</code>, at which point our <code>where</code> clause will work. So, the second loop prints two lines.</p>
+</blockquote>
+<h2 id="Question-15-20"><a href="#Question-15-20" class="headerlink" title="Question 15/20"></a>Question 15/20</h2><p>Once this code is executed, how many items will be in the <code>result</code> array?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names: [<span class="type">String</span>?] = [<span class="string">"Barbara"</span>, <span class="literal">nil</span>, <span class="string">"Janet"</span>, <span class="literal">nil</span>, <span class="string">"Peter"</span>, <span class="literal">nil</span>, <span class="string">"George"</span>]</span><br><span class="line"><span class="keyword">let</span> result = names.flatMap &#123; $<span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>0</li>
+<li>3</li>
+<li>4</li>
+<li>7</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: 4.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: Swift’s <code>flatMap</code> will automatically strip nil values from an array, meaning that <code>result</code> will contain the names Barbara, Janet, Peter, and George.</p>
+</blockquote>
+<h2 id="Question-16-20"><a href="#Question-16-20" class="headerlink" title="Question 16/20"></a>Question 16/20</h2><p>When this code is executed, what will <code>example2</code> be set to?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [<span class="type">String</span>]()</span><br><span class="line">names.append(<span class="string">"Amy"</span>)</span><br><span class="line"><span class="keyword">let</span> example1 = names.removeLast()</span><br><span class="line"><span class="keyword">let</span> example2 = names.removeLast()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“”</li>
+<li>“Amy”</li>
+<li>nil</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: This code will compile but crash.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>removeLast()</code> method returns the same data type as the array contains, which in this code is a String. As the only string in the array was already removed, the second call will throw an exception and crash.</p>
+</blockquote>
+<h2 id="Question-17-20"><a href="#Question-17-20" class="headerlink" title="Question 17/20"></a>Question 17/20</h2><p>What output will be produced by the code below?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spaceships1 = <span class="type">Set</span>&lt;<span class="type">String</span>&gt;()</span><br><span class="line">spaceships1.insert(<span class="string">"Serenity"</span>)</span><br><span class="line">spaceships1.insert(<span class="string">"Enterprise"</span>)</span><br><span class="line">spaceships1.insert(<span class="string">"TARDIS"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> spaceships2 = spaceships1</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> spaceships1.isSubset(of: spaceships2) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"This is a subset"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"This is not a subset"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“This is a subset”</li>
+<li>“This is not a subset”</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: “This is a subset”.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: Sets distinguish between subsets and strict (or “proper”) subsets, with the difference being that the latter necessarily excludes identical sets. That is, Set A is a subset of Set B if every item in Set A is also in Set B. On the other hand, Set A is a strict subset of Set B if every element in Set A is also in Set B, but Set B contains at least one item that is missing from Set A.</p>
+</blockquote>
+<h2 id="Question-18-20"><a href="#Question-18-20" class="headerlink" title="Question 18/20"></a>Question 18/20</h2><p>In the code below, what data type will be assigned to <code>result</code>?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = <span class="type">UInt8</span>.<span class="built_in">max</span>.addingReportingOverflow(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array</li>
+<li>Int</li>
+<li>Int8</li>
+<li>Tuple</li>
+<li>UInt</li>
+<li>UInt8</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: Tuple.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>UInt8.addingReportingOverflow()</code> method returns a tuple <code>(UInt8, Bool)</code> where the first value stores the result of the add operation, and the second value stores whether an overflow happened.</p>
+</blockquote>
+<h2 id="Question-19-20"><a href="#Question-19-20" class="headerlink" title="Question 19/20"></a>Question 19/20</h2><p>When this code is executed, what will <code>example2</code> be set to?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [<span class="type">String</span>]()</span><br><span class="line">names.append(<span class="string">"Amy"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> example1 = names.popLast()</span><br><span class="line"><span class="keyword">let</span> example2 = names.popLast()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“”</li>
+<li>“Amy”</li>
+<li>nil</li>
+<li>Nothing will be output</li>
+<li>This code will compile but crash</li>
+<li>This code will not compile</li>
+</ul>
+<blockquote>
+<p>Correct answer: nil.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>popLast()</code> method returns an optional version of the data type the array contains, which in this code is a <code>String?</code>. As the only string in the array was already removed, the second call will return <code>nil</code>.</p>
+</blockquote>
+<h2 id="Question-20-20"><a href="#Question-20-20" class="headerlink" title="Question 20/20"></a>Question 20/20</h2><p>Once this code is executed, what value will <code>result</code> hold?</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = numbers.<span class="built_in">reduce</span>(<span class="number">0</span>, +)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“1, 3, 5, 7, 9” (a string)</li>
+<li>“13579” (a string)</li>
+<li>(1, 3, 5, 7, 9) (a tuple)</li>
+<li>1</li>
+<li>25</li>
+<li>[1, 3, 5, 7, 9] (an array)</li>
+</ul>
+<blockquote>
+<p>Correct answer: 25.</p>
+</blockquote>
+<blockquote>
+<p>Explanation: The <code>reduce</code> method combines the integers in the <code>numbers</code> array into a single value by applying a function to each one. In our case, that’s the <code>+</code> operator, which means “add all these numbers together”, giving 25.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/swift/" rel="tag"># swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/10/swift-test-intermediate/" rel="next" title="HACKING WITH SWIFT Intermediate Test">
+                <i class="fa fa-chevron-left"></i> HACKING WITH SWIFT Intermediate Test
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhaoyu Zhong</p>
+              <p class="site-description motion-element" itemprop="description">An hour of focused attention may be worth more than days of partial attention.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-1-20"><span class="nav-number">1.</span> <span class="nav-text">Question 1/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-2-20"><span class="nav-number">2.</span> <span class="nav-text">Question 2/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-3-20"><span class="nav-number">3.</span> <span class="nav-text">Question 3/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-4-20"><span class="nav-number">4.</span> <span class="nav-text">Question 4/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-5-20"><span class="nav-number">5.</span> <span class="nav-text">Question 5/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-6-20"><span class="nav-number">6.</span> <span class="nav-text">Question 6/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-7-20"><span class="nav-number">7.</span> <span class="nav-text">Question 7/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-8-20"><span class="nav-number">8.</span> <span class="nav-text">Question 8/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-9-20"><span class="nav-number">9.</span> <span class="nav-text">Question 9/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-10-20"><span class="nav-number">10.</span> <span class="nav-text">Question 10/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-11-20"><span class="nav-number">11.</span> <span class="nav-text">Question 11/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-12-20"><span class="nav-number">12.</span> <span class="nav-text">Question 12/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-13-20"><span class="nav-number">13.</span> <span class="nav-text">Question 13/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-14-20"><span class="nav-number">14.</span> <span class="nav-text">Question 14/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-15-20"><span class="nav-number">15.</span> <span class="nav-text">Question 15/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-16-20"><span class="nav-number">16.</span> <span class="nav-text">Question 16/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-17-20"><span class="nav-number">17.</span> <span class="nav-text">Question 17/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-18-20"><span class="nav-number">18.</span> <span class="nav-text">Question 18/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-19-20"><span class="nav-number">19.</span> <span class="nav-text">Question 19/20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question-20-20"><span class="nav-number">20.</span> <span class="nav-text">Question 20/20</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhaoyu Zhong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
