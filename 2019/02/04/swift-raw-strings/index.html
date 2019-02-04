@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="作者：Paul Hudson，原文链接，原文日期：2019-01-03译者：Zhaoyu Zhong  在 Swift 5 中原始字符串给了我们更自然地写出字符串的能力，尤其是在我们使用 \ 和 &amp;quot; 符号时。在某些情况下，比如正则表达式中，原始字符串带来改变令人激动，下问会提到。">
+<meta name="keywords" content="swift,raw string">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使用 Swift 5 中的原是字符串">
+<meta property="og:url" content="https://icedrip.github.io/2019/02/04/swift-raw-strings/index.html">
+<meta property="og:site_name" content="Zhaoyu&#39;s Blog">
+<meta property="og:description" content="作者：Paul Hudson，原文链接，原文日期：2019-01-03译者：Zhaoyu Zhong  在 Swift 5 中原始字符串给了我们更自然地写出字符串的能力，尤其是在我们使用 \ 和 &amp;quot; 符号时。在某些情况下，比如正则表达式中，原始字符串带来改变令人激动，下问会提到。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://icedrip.github.io/2019/02/04/swift-raw-strings/backslashes.png">
+<meta property="og:updated_time" content="2019-02-04T09:19:54.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何使用 Swift 5 中的原是字符串">
+<meta name="twitter:description" content="作者：Paul Hudson，原文链接，原文日期：2019-01-03译者：Zhaoyu Zhong  在 Swift 5 中原始字符串给了我们更自然地写出字符串的能力，尤其是在我们使用 \ 和 &amp;quot; 符号时。在某些情况下，比如正则表达式中，原始字符串带来改变令人激动，下问会提到。">
+<meta name="twitter:image" content="https://icedrip.github.io/2019/02/04/swift-raw-strings/backslashes.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://icedrip.github.io/2019/02/04/swift-raw-strings/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>如何使用 Swift 5 中的原是字符串 | Zhaoyu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zhaoyu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">彼岸织锦，此端弄笛</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://icedrip.github.io/2019/02/04/swift-raw-strings/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhaoyu Zhong">
+      <meta itemprop="description" content="An hour of focused attention may be worth more than days of partial attention.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhaoyu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何使用 Swift 5 中的原是字符串
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-04 17:19:54" itemprop="dateCreated datePublished" datetime="2019-02-04T17:19:54+08:00">2019-02-04</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>作者：Paul Hudson，<a href="https://www.hackingwithswift.com/articles/162/how-to-use-raw-strings-in-swift" target="_blank" rel="noopener">原文链接</a>，原文日期：2019-01-03<br>译者：Zhaoyu Zhong</p>
+</blockquote>
+<p>在 Swift 5 中原始字符串给了我们更自然地写出字符串的能力，尤其是在我们使用 <code>\</code> 和 <code>&quot;</code> 符号时。在某些情况下，比如正则表达式中，原始字符串带来改变令人激动，下问会提到。</p>
+<a id="more"></a>
+<p>我写过许多 <a href="https://www.hackingwithswift.com/articles/126/whats-new-in-swift-5-0" target="_blank" rel="noopener">Swift 5 新特性</a>， 甚至有个网站专门记录 <a href="https://www.whatsnewinswift.com/" target="_blank" rel="noopener">Swift 的新特性</a>。这篇文章我想更深入一些：我想讨论如何使用 Swift 5 原始字符串，同时也会给出一些例子说明为何原始字符串非常有用。</p>
+<p>如果你曾想过「Swift 里的那些 # 是做什么的？」，希望这篇文章会帮到你！</p>
+<p><strong>Tip</strong>: 原始字符串完全是可选的 - 你不必一定要在自己的代码里使用它们，当你以后看到原始字符串，你至少需要知道这是什么东西。</p>
+<h2 id="什么是原始字符串？"><a href="#什么是原始字符串？" class="headerlink" title="什么是原始字符串？"></a>什么是原始字符串？</h2><p>Swift 5 允许用户使用 <code>#</code> 自己指定分隔符，有时候该符号也被称为 hashtag 或 pound sign。当你使用 <code>#</code> 括起字符串，这会改变 Swift 理解特定字符的方式：<code>\</code> 不再是转义字符， <code>\n</code> 不再是 line break，正如字面是一个反斜线后跟着一个字符「n」，<code>\(variable)</code> 不再意味着字符串插值。</p>
+<p>所以，下面两个字符串是等价的：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regularString = <span class="string">"\\Hello \\World"</span></span><br><span class="line"><span class="keyword">let</span> rawString = #<span class="string">"\Hello \World"</span>#</span><br></pre></td></tr></table></figure>
+<p>第二个字符串前后都有一个 <code>#</code>，表明这是一个原始字符串。</p>
+<p>同时 <code>#</code> 可以在字符串中使用以表示特殊字符。例如，如果你想使用字符串插值，你应该使用 <code>\#(variableName)</code> 而不是 <code>\(variableName</code>，就像下面这样：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">"Taylor"</span></span><br><span class="line"><span class="keyword">let</span> greeting = #<span class="string">"Hello, \#(name)!"</span>#</span><br><span class="line"><span class="built_in">print</span>(greeting)</span><br></pre></td></tr></table></figure>
+<p>你也可以在多行字符串中使用，如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = #<span class="string">"""</span></span><br><span class="line"><span class="string">This is rendered as text: \(example).</span></span><br><span class="line"><span class="string">This uses string interpolation: \#(example).</span></span><br><span class="line"><span class="string">"""</span>#</span><br></pre></td></tr></table></figure>
+<h2 id="Working-with-the-delimiter"><a href="#Working-with-the-delimiter" class="headerlink" title="Working with the delimiter"></a>Working with the delimiter</h2><p>尽管这个特性理论上可能永远不会用到，你还是可以前后使用多个对应的 <code>#</code> 以使字符串分隔符更独特。</p>
+<p>举例，下面的的字符串是相同的：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> zero = <span class="string">"This is a string"</span></span><br><span class="line"><span class="keyword">let</span> one = #<span class="string">"This is a string"</span>#</span><br><span class="line"><span class="keyword">let</span> two = ##<span class="string">"This is a string"</span>##</span><br><span class="line"><span class="keyword">let</span> three = ###<span class="string">"This is a string"</span>###</span><br><span class="line"><span class="keyword">let</span> four = ####<span class="string">"This is a string"</span>####</span><br></pre></td></tr></table></figure>
+<p>这个特性存在的原因是这样你便可以在你想结束字符串的时候结束，在你想以 <code>&quot;#</code> 结尾的字符串中不会出现问题。</p>
+<p>我要强调这种情况不太常见。比如，你需要写字符串 <strong>My dog said “woof”#gooddog</strong> 来引起这个问题 - 我并没有在 “woof” 后面添加空格，并在后面加了 Twitter 式的标签。使用单个 <code>#</code> 分隔符原始字符串会把中间那部分视作分隔符，所以，你需要像这样写：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = ##<span class="string">"My dog said "</span>woof<span class="string">"#gooddog"</span>##</span><br></pre></td></tr></table></figure>
+<h2 id="Why-are-raw-strings-useful"><a href="#Why-are-raw-strings-useful" class="headerlink" title="Why are raw strings useful?"></a>Why are raw strings useful?</h2><p>在 Swift Evolution 关于原始字符串的提案中提到了 3 点以支持这是一个好主意。如下：</p>
+<ol>
+<li>Is obscured by escaping. Escaping actively harms code review and validation.</li>
+<li>Is already escaped. Escaped material should not be pre-interpreted by the compiler.</li>
+<li>Requires easy transport between source and code in both directions, whether for testing or just updating source.</li>
+</ol>
+<p>前两点是最可能影响到你的：在已经含有转义符的字符串中使用转移往往会使代码难以阅读。</p>
+<p>举正则表达式的例子来说，我们有如下字符串：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = #<span class="string">"String interpolation looks like this: \(age)."</span>#</span><br></pre></td></tr></table></figure>
+<p>该例子向我们展示了字符串插值应该是什么样子的 —— 字符串 “(age)” 会原样显示在接下来的文本中，而不是把名为 age 的变量的值显示在这个位置。</p>
+<p>如果我们想创建一个正则表达式找到所有的字符串插值，我们应该以 <code>\([^)])</code> 开头。「反斜线 <code>\</code>、左括号 <code>(</code>、一个或多个不是右括号的字符 <code>[^)]</code>、右括号 <code>)</code>」。（如果你不熟悉正则表达式，我的书 <a href="https://www.hackingwithswift.com/store/beyond-code" target="_blank" rel="noopener">Beyond Code</a> 对你会非常有帮助！）</p>
+<p>然而，我们不能在 Swift 中这样使用 - 如下使用是无效的：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">try</span> <span class="type">NSRegularExpression</span>(pattern: <span class="string">"\([^)])"</span>)</span><br></pre></td></tr></table></figure>
+<p>Swift 会推测我们使用字符串插值语法并把 <code>\</code> 当作转译符。因此，我们需要使用两个反斜线，如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">try</span> <span class="type">NSRegularExpression</span>(pattern: <span class="string">"\\([^)]+)"</span>)</span><br></pre></td></tr></table></figure>
+<p>此时我们遇到了第二个问题：当读该字符串时，系统会读作 <code>\([^)])</code>，因此 regex system 假设我们在转译左括号而不是字面的反斜线，我们还需要再加一个转译符：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">try</span> <span class="type">NSRegularExpression</span>(pattern: <span class="string">"\\\([^)]+)"</span>)</span><br></pre></td></tr></table></figure>
+<p>…同样 Swift 认为我们在转译反斜线和左括号，我们又需要添加第四个反斜线：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">try</span> <span class="type">NSRegularExpression</span>(pattern: <span class="string">"\\\\([^)]+)"</span>)</span><br></pre></td></tr></table></figure>
+<p>没错，现在我们有四个反斜线：一个我们想匹配的，一个是在 Swift 中转译的，一个是在正则中转译的，一个去转译 Swift 的转译引擎所转移的东西。</p>
+<p><em>此时正则还是不会工作。</em></p>
+<p>我们还需要转译我们要匹配的左括号和右括号，完整的正则表达式应该如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">try</span> <span class="type">NSRegularExpression</span>(pattern: <span class="string">"\\\\\\([^)]+\\)"</span>)</span><br></pre></td></tr></table></figure>
+<p>我们转译正则引擎中的 <code>(</code>，and another in Swift to escape the regex engine quote.</p>
+<p>希望你能正视 xkcd 关于反斜线图片所展示的这个令人沮丧的事实：</p>
+<img src="/2019/02/04/swift-raw-strings/backslashes.png">
+<p>如果我们使用原始字符串，虽然我们仍然需要转译：必须写「\」去匹配「\」，写「\」去匹配「(」，至少我们不再需要为 Swift 写额外的转译符。</p>
+<p>最终，只需要一半的反斜线：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">try</span> <span class="type">NSRegularExpression</span>(pattern: #<span class="string">"\\\([^)]+\)"</span>#)</span><br></pre></td></tr></table></figure>
+<p>正则表达式不需要为 Swift 做特别的转译，因此我们可以不加修改的任意尝试 <a href="https://regex101.com" target="_blank" rel="noopener">https://regex101.com</a> 里的表达式了。</p>
+<h2 id="Where-next"><a href="#Where-next" class="headerlink" title="Where next?"></a>Where next?</h2><p>关于 Swift 5 更多的特性，你可以读我的文章 <a href="https://www.hackingwithswift.com/articles/126/whats-new-in-swift-5-0" target="_blank" rel="noopener">What’s new in Swift 5.0</a>。</p>
+<p>读读 Swift Evolution 关于原始字符串的提案也有一定帮助：<a href="https://github.com/apple/swift-evolution/blob/master/proposals/0200-raw-string-escaping.md" target="_blank" rel="noopener">SE-0200 – Enhancing String Literals Delimiters to Support Raw Text</a></p>
+<p>最后，我极力推荐 <a href="https://ericasadun.com/2018/12/26/swift-5-gives-us-nice-things-custom-string-delimiters/" target="_blank" rel="noopener">Erica Sadun 关于这个话题的文章</a>。Erica 是促成这个提议的重要人员，并且提出了很多非常好的如何有效使用原始字符串的建议。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/swift/" rel="tag"># swift</a>
+          
+            <a href="/tags/raw-string/" rel="tag"># raw string</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/22/aria2-usage/" rel="next" title="Aria2 配置与使用">
+                <i class="fa fa-chevron-left"></i> Aria2 配置与使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zhaoyu Zhong</p>
+              <p class="site-description motion-element" itemprop="description">An hour of focused attention may be worth more than days of partial attention.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是原始字符串？"><span class="nav-number">1.</span> <span class="nav-text">什么是原始字符串？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-with-the-delimiter"><span class="nav-number">2.</span> <span class="nav-text">Working with the delimiter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-are-raw-strings-useful"><span class="nav-number">3.</span> <span class="nav-text">Why are raw strings useful?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where-next"><span class="nav-number">4.</span> <span class="nav-text">Where next?</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhaoyu Zhong</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
