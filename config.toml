@@ -1,4 +1,4 @@
-baseURL = 'https://icedrip.github.io/'
+baseURL = 'https://icedrip.github.io'
 languageCode = 'en-us'
-title = 'icedrip'
+title = 'icedrip blog'
 theme = "PaperMod"
