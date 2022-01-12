@@ -2,3 +2,4 @@ baseURL = 'https://icedrip.github.io'
 languageCode = 'en-us'
 title = 'icedrip blog'
 theme = "PaperMod"
+publishDir = 'docs'
