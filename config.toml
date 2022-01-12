@@ -1,5 +1,5 @@
-baseURL = 'https://icedrip.github.io'
+baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'icedrip blog'
-theme = "PaperMod"
+title = 'My New Hugo Site'
+theme = 'PaperMod'
 publishDir = 'docs'
